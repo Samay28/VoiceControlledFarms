@@ -1,0 +1,26 @@
+[
+	{
+		"file": "C:\\Users\\samay\\Documents\\Unreal Projects\\SIH\\Source\\SIH\\SIH.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Unreal Projects\\SIH\\.vscode\\compileCommands_Default\\SIH.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Unreal Projects\\SIH\\Source\\SIH\\SIH.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Unreal Projects\\SIH\\.vscode\\compileCommands_Default\\SIH.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Unreal Projects\\SIH\\Source\\SIH\\SIH.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Unreal Projects\\SIH\\.vscode\\compileCommands_Default\\SIH.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	}
+]
