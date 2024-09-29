@@ -50,3 +50,14 @@ Traditional learning lacks **engagement, accessibility, and practical applicatio
 - **Expanded Vocational Modules**: Introduce additional skill-based scenarios, e.g., carpentry, healthcare, to broaden learning experiences.
 - **Accessibility Improvements**: Broaden control schemes for different player abilities, such as keyboard/touch for those unable to use voice/gesture controls.
 - **Gamified Assessments & Certifications**: Implement in-game assessments to track skill progression and certify accomplishments.
+
+## Screenshots of Game Developed 🎥📸🎯
+
+### Farm View, Low Poly - 3D Environment
+![Farm View Screen](https://drive.google.com/uc?export=view&id=1GA4C3jQNc126Nkaxc26x1ZSizTIshsoK)
+
+### Build Farm, Low Poly - 3D Environment
+![Build Farm Screen](https://drive.google.com/uc?export=view&id=1LE-vNrYJaoHwoUkji2dlV86j5GZe8tBf)
+
+### Choose Strategy, Low Poly - 3D Environment
+![Choose Farm Strategy Screen](https://drive.google.com/uc?export=view&id=1nySeScHMhRg_d3gQ4pzV4h3mElgb25xc)
