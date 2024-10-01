@@ -6,13 +6,13 @@
 // Sets default values
 AFarmLand::AFarmLand()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	
 	PrimaryActorTick.bCanEverTick = true;
 	FarmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FarmMesh"));
 	FarmMesh->SetupAttachment(GetRootComponent());
 }
 
-// Called when the game starts or when spawned
+
 void AFarmLand::BeginPlay()
 {
 	Super::BeginPlay();
