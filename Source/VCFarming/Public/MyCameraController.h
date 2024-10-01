@@ -18,7 +18,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditAnywhere)
 	class USpringArmComponent* SpringArm;
+	UPROPERTY(EditAnywhere)
 	class UCameraComponent* Camera;
 
 	UPROPERTY(EditAnywhere)

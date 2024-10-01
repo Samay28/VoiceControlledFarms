@@ -10,6 +10,9 @@ AFarmLand::AFarmLand()
 	PrimaryActorTick.bCanEverTick = true;
 	FarmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FarmMesh"));
 	FarmMesh->SetupAttachment(GetRootComponent());
+
+	CropTypeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CropMesh"));
+	CropTypeMesh->SetupAttachment(FarmMesh);
 }
 
 
