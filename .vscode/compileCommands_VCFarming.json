@@ -1,5 +1,133 @@
 [
 	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Private\\SpeechRecognition.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Private\\SpeechRecognitionGameStateBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Private\\SpeechRecognitionSubsystem.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Private\\SpeechRecognitionWorker.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Public\\ISpeechRecognition.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Public\\SpeechRecognition.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Public\\SpeechRecognitionGameStateBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Public\\SpeechRecognitionSubsystem.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\Public\\SpeechRecognitionWorker.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Plugins\\SpeechRecognition\\Source\\SpeechRecognition\\SpeechRecognition.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\SpeechRecognition.25.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmLand.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmPlot.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\MyCameraController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmLand.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmPlot.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\MyCameraController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_VCFarming\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\VCFarming.Build.cs",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",

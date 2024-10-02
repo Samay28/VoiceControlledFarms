@@ -19,7 +19,6 @@ AFarmLand::AFarmLand()
 void AFarmLand::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -29,3 +28,10 @@ void AFarmLand::Tick(float DeltaTime)
 
 }
 
+void AFarmLand::InputCropType(int index)
+{
+	if(CropMeshes.IsValidIndex(index))
+	{
+		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
+	}
+}
