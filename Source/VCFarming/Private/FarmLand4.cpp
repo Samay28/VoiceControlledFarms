@@ -13,7 +13,7 @@ AFarmLand4::AFarmLand4()
 
 	CropTypeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CropMesh"));
 	CropTypeMesh->SetupAttachment(FarmMesh);
-	
+
 }
 
 // Called when the game starts or when spawned
@@ -30,3 +30,10 @@ void AFarmLand4::Tick(float DeltaTime)
 
 }
 
+void AFarmLand4::InputCropType(int index)
+{
+	if(CropMeshes.IsValidIndex(index))
+	{
+		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
+	}
+}
