@@ -33,5 +33,6 @@ void AFarmLand::InputCropType(int index)
 	if(CropMeshes.IsValidIndex(index))
 	{
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
+		UE_LOG(LogTemp, Warning, TEXT("Changed!"));
 	}
 }
