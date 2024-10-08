@@ -80,7 +80,47 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\CropManager.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmLand.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmLand2.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmLand3.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmLand4.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\FarmLand5.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
 			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
@@ -104,7 +144,47 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\CropManager.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmLand.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmLand2.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmLand3.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmLand4.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\FarmLand5.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
 			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"

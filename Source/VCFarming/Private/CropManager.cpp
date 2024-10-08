@@ -23,102 +23,101 @@ void ACropManager::BeginPlay()
 {
     Super::BeginPlay();
 
+    // Get all instances of AFarmLand and assign to a list
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFarmLand::StaticClass(), FoundFarms1);
+    
+    // Get all instances of AFarmLand2 and assign to a list
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFarmLand2::StaticClass(), FoundFarms2);
 
-    TArray<AActor*> FoundFarms;
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(),AFarmLand::StaticClass(), FoundFarms);
-    if (FoundFarms.Num() > 0)
-    {
-        Farm = Cast<AFarmLand>(FoundFarms[0]);  
-    }
+    // Get all instances of AFarmLand3 and assign to a list
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFarmLand3::StaticClass(), FoundFarms3);
 
-    FoundFarms.Empty();
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(),AFarmLand2::StaticClass(), FoundFarms);
-    if (FoundFarms.Num() > 0)
-    {
-        Farm2 = Cast<AFarmLand2>(FoundFarms[0]);  
-    }
+    // Get all instances of AFarmLand4 and assign to a list
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFarmLand4::StaticClass(), FoundFarms4);
 
-    FoundFarms.Empty();
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(),AFarmLand3::StaticClass(), FoundFarms);
-    if (FoundFarms.Num() > 0)
-    {
-        Farm3 = Cast<AFarmLand3>(FoundFarms[0]);  
-    }
-
-
-    FoundFarms.Empty();
-   UGameplayStatics::GetAllActorsOfClass(GetWorld(),AFarmLand4::StaticClass(), FoundFarms);
-    if (FoundFarms.Num() > 0)
-    {
-        Farm4 = Cast<AFarmLand4>(FoundFarms[0]);  
-    }
-
-    FoundFarms.Empty();
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(),AFarmLand5::StaticClass(), FoundFarms);
-    if (FoundFarms.Num() > 0)
-    {
-        Farm5 = Cast<AFarmLand5>(FoundFarms[0]);  
-    }
+    // Get all instances of AFarmLand5 and assign to a list
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFarmLand5::StaticClass(), FoundFarms5);
 }
 
 
 void ACropManager::selectCropsF1()
 {
-    if (Farm)
+    for (AActor* FarmActor : FoundFarms1)
     {
-        Farm->InputCropType(SelectedCropIndex);
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Farm1 is null!"));
+        AFarmLand* FarmInstance = Cast<AFarmLand>(FarmActor);
+        if (FarmInstance)
+        {
+            FarmInstance->InputCropType(SelectedCropIndex);
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Farm1 is null!"));
+        }
     }
 }
 
+// Function to apply crops to all instances of AFarmLand2
 void ACropManager::selectCropsF2()
 {
-    if (Farm2)
+    for (AActor* FarmActor : FoundFarms2)
     {
-        Farm2->InputCropType(SelectedCropIndex);
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Farm2 is null!"));
+        AFarmLand2* FarmInstance = Cast<AFarmLand2>(FarmActor);
+        if (FarmInstance)
+        {
+            FarmInstance->InputCropType(SelectedCropIndex);
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Farm2 is null!"));
+        }
     }
 }
-
 void ACropManager::selectCropsF3()
 {
-    if (Farm3)
+    for (AActor* FarmActor : FoundFarms3)
     {
-        Farm3->InputCropType(SelectedCropIndex);
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Farm3 is null!"));
+        AFarmLand* FarmInstance = Cast<AFarmLand>(FarmActor);
+        if (FarmInstance)
+        {
+            FarmInstance->InputCropType(SelectedCropIndex);
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Farm3 is null!"));
+        }
     }
 }
 
+// Function to apply crops to all instances of AFarmLand2
 void ACropManager::selectCropsF4()
 {
-    if (Farm4)
+    for (AActor* FarmActor : FoundFarms2)
     {
-        Farm4->InputCropType(SelectedCropIndex);
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Farm4 is null!"));
+        AFarmLand2* FarmInstance = Cast<AFarmLand2>(FarmActor);
+        if (FarmInstance)
+        {
+            FarmInstance->InputCropType(SelectedCropIndex);
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Farm4 is null!"));
+        }
     }
 }
 
 void ACropManager::selectCropsF5()
 {
-    if (Farm5)
+    for (AActor* FarmActor : FoundFarms5)
     {
-        Farm5->InputCropType(SelectedCropIndex);
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Farm5 is null!"));
+        AFarmLand2* FarmInstance = Cast<AFarmLand2>(FarmActor);
+        if (FarmInstance)
+        {
+            FarmInstance->InputCropType(SelectedCropIndex);
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Farm5 is null!"));
+        }
     }
 }
 

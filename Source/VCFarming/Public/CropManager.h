@@ -10,8 +10,8 @@ UCLASS()
 class VCFARMING_API ACropManager : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ACropManager();
 	virtual void Tick(float DeltaTime) override;
@@ -24,7 +24,6 @@ public:
 	int count;
 
 protected:
-	
 	virtual void BeginPlay() override;
 
 	void selectCropsF1();
@@ -33,14 +32,9 @@ protected:
 	void selectCropsF4();
 	void selectCropsF5();
 
-
-	class AFarmLand* Farm;
-	class AFarmLand2* Farm2;
-	class AFarmLand3* Farm3;
-	class AFarmLand4* Farm4;
-	class AFarmLand5* Farm5;
-	
-
-
-
+	TArray<AActor *> FoundFarms1;
+	TArray<AActor *> FoundFarms2;
+	TArray<AActor *> FoundFarms3;
+	TArray<AActor *> FoundFarms4;
+	TArray<AActor *> FoundFarms5;
 };
