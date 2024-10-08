@@ -76,7 +76,7 @@ void ACropManager::selectCropsF3()
 {
     for (AActor* FarmActor : FoundFarms3)
     {
-        AFarmLand* FarmInstance = Cast<AFarmLand>(FarmActor);
+        AFarmLand3* FarmInstance = Cast<AFarmLand3>(FarmActor);
         if (FarmInstance)
         {
             FarmInstance->InputCropType(SelectedCropIndex);
@@ -91,9 +91,9 @@ void ACropManager::selectCropsF3()
 // Function to apply crops to all instances of AFarmLand2
 void ACropManager::selectCropsF4()
 {
-    for (AActor* FarmActor : FoundFarms2)
+    for (AActor* FarmActor : FoundFarms4)
     {
-        AFarmLand2* FarmInstance = Cast<AFarmLand2>(FarmActor);
+        AFarmLand4* FarmInstance = Cast<AFarmLand4>(FarmActor);
         if (FarmInstance)
         {
             FarmInstance->InputCropType(SelectedCropIndex);
@@ -109,7 +109,7 @@ void ACropManager::selectCropsF5()
 {
     for (AActor* FarmActor : FoundFarms5)
     {
-        AFarmLand2* FarmInstance = Cast<AFarmLand2>(FarmActor);
+        AFarmLand5* FarmInstance = Cast<AFarmLand5>(FarmActor);
         if (FarmInstance)
         {
             FarmInstance->InputCropType(SelectedCropIndex);
