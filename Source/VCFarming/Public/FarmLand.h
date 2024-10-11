@@ -18,7 +18,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void InputCropType(int index);
+	void InputCropType(int index, int SuccessRate);
+
+	int CurrentSuccessRate;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

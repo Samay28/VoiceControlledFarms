@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "FarmLand4.h"
@@ -20,7 +19,7 @@ AFarmLand4::AFarmLand4()
 void AFarmLand4::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	CropTypeMesh->SetVisibility(false);
 }
 
 // Called every frame
@@ -30,10 +29,13 @@ void AFarmLand4::Tick(float DeltaTime)
 
 }
 
-void AFarmLand4::InputCropType(int index)
+void AFarmLand4::InputCropType(int index, int SuccessRate)
 {
 	if(CropMeshes.IsValidIndex(index))
 	{
+		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
+		CurrentSuccessRate = SuccessRate;
+		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %d"), CurrentSuccessRate);
 	}
 }

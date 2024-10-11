@@ -31,9 +31,9 @@ public:
 
 	
 	
-	UFUNCTION(BlueprintCallable)
-	void InputCropType(int index);
+	void InputCropType(int index, int SuccessRate);
 
+	int CurrentSuccessRate;
 
 
 

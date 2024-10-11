@@ -20,7 +20,7 @@ AFarmLand2::AFarmLand2()
 void AFarmLand2::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	CropTypeMesh->SetVisibility(false);
 }
 
 // Called every frame
@@ -30,10 +30,13 @@ void AFarmLand2::Tick(float DeltaTime)
 
 }
 
-void AFarmLand2::InputCropType(int index)
+void AFarmLand2::InputCropType(int index, int SuccessRate)
 {
 	if(CropMeshes.IsValidIndex(index))
 	{
+		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
+		CurrentSuccessRate = SuccessRate;
+		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %d"), CurrentSuccessRate);
 	}
 }

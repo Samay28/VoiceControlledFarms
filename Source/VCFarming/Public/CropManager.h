@@ -1,40 +1,45 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "SeasonManager.h"
 #include "CropManager.generated.h"
 
 UCLASS()
 class VCFARMING_API ACropManager : public AActor
 {
 	GENERATED_BODY()
-
-public:
-	// Sets default values for this actor's properties
+	
+public:	
 	ACropManager();
-	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(BlueprintReadWrite)
-	int SelectedCropIndex;
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
 	void AssignCrops();
-	int count;
 
 protected:
-	virtual void BeginPlay() override;
+	// Farm instances arrays for each type of farm
+	TArray<AActor*> FoundFarms1;
+	TArray<AActor*> FoundFarms2;
+	TArray<AActor*> FoundFarms3;
+	TArray<AActor*> FoundFarms4;
+	TArray<AActor*> FoundFarms5;
 
-	void selectCropsF1();
-	void selectCropsF2();
-	void selectCropsF3();
-	void selectCropsF4();
-	void selectCropsF5();
+	// Reference to the SeasonManager
+	ASeasonManager* SeasonManager;
 
-	TArray<AActor *> FoundFarms1;
-	TArray<AActor *> FoundFarms2;
-	TArray<AActor *> FoundFarms3;
-	TArray<AActor *> FoundFarms4;
-	TArray<AActor *> FoundFarms5;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int SelectedCropIndex;
+
+	// Internal counter for farm plots
+	int count;
+
+	// Crop selection methods for each farm type
+	void selectCropsF1(float SuccessRate);
+	void selectCropsF2(float SuccessRate);
+	void selectCropsF3(float SuccessRate);
+	void selectCropsF4(float SuccessRate);
+	void selectCropsF5(float SuccessRate);
 };

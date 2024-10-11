@@ -30,8 +30,9 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
-	void InputCropType(int index);
+	void InputCropType(int index, int SuccessRate);
+
+	int CurrentSuccessRate;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
