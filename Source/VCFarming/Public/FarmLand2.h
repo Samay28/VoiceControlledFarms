@@ -32,7 +32,7 @@ public:
 
 	void InputCropType(int index, int SuccessRate);
 
-	int CurrentSuccessRate;
+	float CurrentSuccessRate;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

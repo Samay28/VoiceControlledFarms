@@ -36,6 +36,6 @@ void AFarmLand4::InputCropType(int index, int SuccessRate)
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
 		CurrentSuccessRate = SuccessRate;
-		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %d"), CurrentSuccessRate);
+
 	}
 }
