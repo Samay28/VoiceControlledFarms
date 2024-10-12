@@ -31,7 +31,7 @@ public:
 
 	void InputCropType(int index, int SuccessRate);
 
-	float CurrentSuccessRate;
+	int CurrentSuccessRate;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UStaticMesh*> CropMeshes;

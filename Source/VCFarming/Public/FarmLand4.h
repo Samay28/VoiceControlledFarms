@@ -33,7 +33,7 @@ public:
 	
 	void InputCropType(int index, int SuccessRate);
 
-	float CurrentSuccessRate;
+	int CurrentSuccessRate;
 
 
 

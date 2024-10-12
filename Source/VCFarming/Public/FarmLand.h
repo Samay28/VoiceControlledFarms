@@ -20,7 +20,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void InputCropType(int index, int SuccessRate);
 
-	float CurrentSuccessRate;
+	int CurrentSuccessRate;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
