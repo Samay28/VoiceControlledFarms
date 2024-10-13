@@ -1,51 +1,50 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "UtilityManager.h"
+#include "Kismet/KismetMathLibrary.h"
 
-// Sets default values
 AUtilityManager::AUtilityManager()
 {
- 
-	PrimaryActorTick.bCanEverTick = false;
-
+    PrimaryActorTick.bCanEverTick = false;
+    InitializeBoostRates();
 }
 
-float AUtilityManager::GetTotalSuccessRateModifier() const
+void AUtilityManager::BeginPlay()
 {
-    switch(UtilityChoice)
+    for(int i=0; i<14; i++)
     {
-        case EUtilityType::Premium: // Advanced/Premium utilities
-            return 0.05f;
-        case EUtilityType::Standard: // Standard/Modern utilities
-            return 0.03f;
-        case EUtilityType::Basic: // Basic/Old Style utilities
-            return 0.01f;
-        case EUtilityType::NotUsing:
-        default:
-            return 0.0f;
+        if(UtilityBoostRates.Contains(i))
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Utility: %d, BoostRate: %f"), i, UtilityBoostRates[i]);
+        }
     }
 }
 
-float AUtilityManager::GetUtilityBoost(EUtilityType UtilityChoice) const
+float AUtilityManager::GetBoostSuccessRate(int UtilityIndex) const
 {
-    return GetUtilityBoost(EquipmentChoice) +
-           GetUtilityBoost(FertilizerChoice) +
-           GetUtilityBoost(IrrigationChoice) +
-           GetUtilityBoost(PestControlChoice);
+    float boostRate = 0.0f;
+    if(UtilityIndex==0 || UtilityIndex==3 || UtilityIndex==7 || UtilityIndex==10)
+    {
+        boostRate = 0.05f;
+    }
+    else if(UtilityIndex==1 || UtilityIndex==4 || UtilityIndex==8 || UtilityIndex==11 )
+    {
+        boostRate = 0.03f;
+    }
+    else if(UtilityIndex==2 || UtilityIndex==5 || UtilityIndex==9 || UtilityIndex==12)
+    {
+        boostRate = 0.01f;
+    }
+    else 
+    {
+        boostRate = 0.0f;
+    }
+    return boostRate;
 }
 
-// Called when the game starts or when spawned
-void AUtilityManager::BeginPlay()
+void AUtilityManager::InitializeBoostRates()
 {
-	Super::BeginPlay();
-	
+    for(int UI = 0; UI<14; UI++)
+    {
+        float BoostRate = GetBoostSuccessRate(UI);
+        UtilityBoostRates.Add(UI, BoostRate);
+    }
 }
-
-// Called every frame
-void AUtilityManager::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
