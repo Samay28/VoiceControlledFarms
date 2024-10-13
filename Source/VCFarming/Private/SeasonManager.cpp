@@ -83,6 +83,53 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
     return BaseRate;
 }
 
+float ASeasonManager::GetMarketPrice(int CropIndex) const
+{
+    float CurrentPrice = 0;
+
+    switch(CurrentSeason)
+    {
+        case ESeason::Summer:
+        {
+            switch(CropIndex)
+            {
+                case 0:  // Corn
+                case 1:  // Millet
+                case 2:  // Pumpkin
+                case 3:  // Tomato
+                case 4:  // Pepper plant
+                case 5:  // Cucumber
+                case 6:  // Watermelon
+                    CurrentPrice = FMath::RandRange(20, 50);  // less price for summer crops
+                    break;
+                default:
+                    CurrentPrice = FMath::RandRange(60, 90);  // high price for winter crops
+                    break;
+            }
+        }
+        break;
+
+        case ESeason::Winter:
+        {
+            switch (CropIndex)
+            {
+                case 7:  // Cabbage
+                case 8:  // Onion
+                case 9:  // Turnip
+                case 10: // Grapes
+                    CurrentPrice = FMath::RandRange(20, 50);  // less price for winter crops
+                    break;
+                default:
+                    CurrentPrice = FMath::RandRange(60, 90);  // high price for summer crops
+                    break;
+            }
+        }
+        break;
+    }
+
+    return CurrentPrice;
+}
+
 void ASeasonManager::InitializeSuccessRates()
 {
     for(int CropIndex = 0; CropIndex <= 10; CropIndex++)  // Ensure you cover all crop indices (0-10)
@@ -102,18 +149,5 @@ float ASeasonManager::GetCropSuccessRate(int CropIndex) const
     }
 
     UE_LOG(LogTemp, Warning, TEXT("CropIndex %d not found in CropSuccessRates!"), CropIndex);
-    return 0.0f;  // Return 0.0 if the key is not found
-}
-
-void ASeasonManager::ModifyCropSuccessRate(int CropIndex, float Delta)
-{
-    if (CropSuccessRates.Contains(CropIndex))
-    {
-        CropSuccessRates[CropIndex] += Delta;
-        CropSuccessRates[CropIndex] = FMath::Clamp(CropSuccessRates[CropIndex], 0.0f, 1.0f);  // Clamp between 0% and 100%
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("CropIndex %d not found in CropSuccessRates!"), CropIndex);
-    }
+    return 0.0f;  
 }
