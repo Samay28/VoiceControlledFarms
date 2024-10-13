@@ -29,13 +29,19 @@ void AFarmLand5::Tick(float DeltaTime)
 
 }
 
-void AFarmLand5::InputCropType(int index, int SuccessRate)
+void AFarmLand5::InputCropType(int index, float SuccessRate)
 {
 	if(CropMeshes.IsValidIndex(index))
 	{
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
 		CurrentSuccessRate = SuccessRate;
-		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %d"), CurrentSuccessRate);
+		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %f"), CurrentSuccessRate);
 	}
+}
+
+void AFarmLand5::IncreaseSuccessRate(float Delta)
+{
+	CurrentSuccessRate += Delta;
+	UE_LOG(LogTemp, Warning, TEXT("Increased CurrentSuccessRate : %f"), CurrentSuccessRate);
 }

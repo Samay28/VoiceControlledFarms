@@ -31,11 +31,11 @@ public:
 
 	
 	
-	void InputCropType(int index, int SuccessRate);
+	void InputCropType(int index, float SuccessRate);
 
-	int CurrentSuccessRate;
+	float CurrentSuccessRate;
 
-
+	void IncreaseSuccessRate(float Delta);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UStaticMesh*> CropMeshes;

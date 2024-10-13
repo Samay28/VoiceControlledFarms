@@ -29,11 +29,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void InputCropType(int index, int SuccessRate);
+	void InputCropType(int index, float SuccessRate);
 
-	int CurrentSuccessRate;
+	float CurrentSuccessRate;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UStaticMesh*> CropMeshes;
+
+	void IncreaseSuccessRate(float Delta);
 
 };

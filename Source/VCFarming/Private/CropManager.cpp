@@ -13,6 +13,7 @@ ACropManager::ACropManager()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	count = 0;
+	Ucount = 0;
 	SelectedCropIndex = 0;
 	SeasonManager = nullptr; // Initialize pointer to null
 }
@@ -160,27 +161,93 @@ void ACropManager::AssignCrops()
 }
 void ACropManager::AssignBoost()
 {
-	float BoostedRate = UtilityManager->GetBoostSuccessRate(SelectedUtilityIndex);
-	count = 0;
-	switch (count)
-	{
-	case 0:
-		for (AActor *FarmActor : FoundFarms1)
-		{
-			AFarmLand *FarmInstance = Cast<AFarmLand>(FarmActor);
-			if (FarmInstance)
-			{
-				FarmInstance->IncreaseSuccessRate(BoostedRate);
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Farm2 is null!"));
-			}
-		}
-		break;
+    // Ensure Ucount only runs up to the value of count
+    if (Ucount >= count)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Ucount exceeds the number of farms with assigned crops!"));
+        return;
+    }
 
-	default:
-		break;
-	}
-	count++;
+    float BoostedRate = UtilityManager->GetBoostSuccessRate(SelectedUtilityIndex);
+
+    switch (Ucount)
+    {
+    case 0:
+        for (AActor *FarmActor : FoundFarms1)
+        {
+            AFarmLand *FarmInstance = Cast<AFarmLand>(FarmActor);
+            if (FarmInstance)
+            {
+                FarmInstance->IncreaseSuccessRate(BoostedRate);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Farm1 is null!"));
+            }
+        }
+        break;
+    case 1:
+        for (AActor *FarmActor : FoundFarms2)
+        {
+            AFarmLand2 *FarmInstance = Cast<AFarmLand2>(FarmActor);
+            if (FarmInstance)
+            {
+                FarmInstance->IncreaseSuccessRate(BoostedRate);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Farm2 is null!"));
+            }
+        }
+        break;
+    case 2:
+        for (AActor *FarmActor : FoundFarms3)
+        {
+            AFarmLand3 *FarmInstance = Cast<AFarmLand3>(FarmActor);
+            if (FarmInstance)
+            {
+                FarmInstance->IncreaseSuccessRate(BoostedRate);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Farm3 is null!"));
+            }
+        }
+        break;
+    case 3:
+        for (AActor *FarmActor : FoundFarms4)
+        {
+            AFarmLand4 *FarmInstance = Cast<AFarmLand4>(FarmActor);
+            if (FarmInstance)
+            {
+                FarmInstance->IncreaseSuccessRate(BoostedRate);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Farm4 is null!"));
+            }
+        }
+        break;
+    case 4:
+        for (AActor *FarmActor : FoundFarms5)
+        {
+            AFarmLand5 *FarmInstance = Cast<AFarmLand5>(FarmActor);
+            if (FarmInstance)
+            {
+                FarmInstance->IncreaseSuccessRate(BoostedRate);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Farm5 is null!"));
+            }
+        }
+        break;
+
+    default:
+        UE_LOG(LogTemp, Warning, TEXT("No more farms to boost!"));
+        break;
+    }
+
+    Ucount++;
 }
+

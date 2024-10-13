@@ -35,6 +35,7 @@ protected:
 
 	// Internal counter for farm plots
 	int count;
+	int Ucount;
 
 	// Crop selection methods for each farm type
 	void selectCropsF1(float SuccessRate);
@@ -49,7 +50,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void AssignBoost();
-	
+
 	class AUtilityManager* UtilityManager;
 
 };
