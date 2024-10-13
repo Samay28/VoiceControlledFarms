@@ -39,3 +39,9 @@ void AFarmLand::InputCropType(int index, float SuccessRate)
 		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %f"), CurrentSuccessRate);
 	}
 }
+
+void AFarmLand::IncreaseSuccessRate(float Delta)
+{
+	CurrentSuccessRate += Delta;
+	UE_LOG(LogTemp, Warning, TEXT("Increased CurrentSuccessRate : %f"), CurrentSuccessRate);
+}

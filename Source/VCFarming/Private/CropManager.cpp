@@ -1,6 +1,7 @@
 #include "CropManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "SeasonManager.h"
+#include "UtilityManager.h"
 #include "FarmLand.h"
 #include "FarmLand2.h"
 #include "FarmLand3.h"
@@ -13,7 +14,7 @@ ACropManager::ACropManager()
 	PrimaryActorTick.bCanEverTick = true;
 	count = 0;
 	SelectedCropIndex = 0;
-	SeasonManager = nullptr;  // Initialize pointer to null
+	SeasonManager = nullptr; // Initialize pointer to null
 }
 
 void ACropManager::BeginPlay()
@@ -37,9 +38,9 @@ void ACropManager::BeginPlay()
 
 void ACropManager::selectCropsF1(float SuccessRate)
 {
-	for (AActor* FarmActor : FoundFarms1)
+	for (AActor *FarmActor : FoundFarms1)
 	{
-		AFarmLand* FarmInstance = Cast<AFarmLand>(FarmActor);
+		AFarmLand *FarmInstance = Cast<AFarmLand>(FarmActor);
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
@@ -54,9 +55,9 @@ void ACropManager::selectCropsF1(float SuccessRate)
 
 void ACropManager::selectCropsF2(float SuccessRate)
 {
-	for (AActor* FarmActor : FoundFarms2)
+	for (AActor *FarmActor : FoundFarms2)
 	{
-		AFarmLand2* FarmInstance = Cast<AFarmLand2>(FarmActor);
+		AFarmLand2 *FarmInstance = Cast<AFarmLand2>(FarmActor);
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
@@ -70,9 +71,9 @@ void ACropManager::selectCropsF2(float SuccessRate)
 
 void ACropManager::selectCropsF3(float SuccessRate)
 {
-	for (AActor* FarmActor : FoundFarms3)
+	for (AActor *FarmActor : FoundFarms3)
 	{
-		AFarmLand3* FarmInstance = Cast<AFarmLand3>(FarmActor);
+		AFarmLand3 *FarmInstance = Cast<AFarmLand3>(FarmActor);
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
@@ -86,9 +87,9 @@ void ACropManager::selectCropsF3(float SuccessRate)
 
 void ACropManager::selectCropsF4(float SuccessRate)
 {
-	for (AActor* FarmActor : FoundFarms4)
+	for (AActor *FarmActor : FoundFarms4)
 	{
-		AFarmLand4* FarmInstance = Cast<AFarmLand4>(FarmActor);
+		AFarmLand4 *FarmInstance = Cast<AFarmLand4>(FarmActor);
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
@@ -102,9 +103,9 @@ void ACropManager::selectCropsF4(float SuccessRate)
 
 void ACropManager::selectCropsF5(float SuccessRate)
 {
-	for (AActor* FarmActor : FoundFarms5)
+	for (AActor *FarmActor : FoundFarms5)
 	{
-		AFarmLand5* FarmInstance = Cast<AFarmLand5>(FarmActor);
+		AFarmLand5 *FarmInstance = Cast<AFarmLand5>(FarmActor);
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
@@ -135,25 +136,51 @@ void ACropManager::AssignCrops()
 
 	switch (count)
 	{
-		case 0:
-			selectCropsF1(SuccessRate);
-			break;
-		case 1:
-			selectCropsF2(SuccessRate);
-			break;
-		case 2:
-			selectCropsF3(SuccessRate);
-			break;
-		case 3:
-			selectCropsF4(SuccessRate);
-			break;
-		case 4:
-			selectCropsF5(SuccessRate);
-			break;
-		default:
-			UE_LOG(LogTemp, Warning, TEXT("No more farms to assign crops to!"));
-			return;
+	case 0:
+		selectCropsF1(SuccessRate);
+		break;
+	case 1:
+		selectCropsF2(SuccessRate);
+		break;
+	case 2:
+		selectCropsF3(SuccessRate);
+		break;
+	case 3:
+		selectCropsF4(SuccessRate);
+		break;
+	case 4:
+		selectCropsF5(SuccessRate);
+		break;
+	default:
+		UE_LOG(LogTemp, Warning, TEXT("No more farms to assign crops to!"));
+		return;
 	}
 
+	count++;
+}
+void ACropManager::AssignBoost()
+{
+	float BoostedRate = UtilityManager->GetBoostSuccessRate(SelectedUtilityIndex);
+	count = 0;
+	switch (count)
+	{
+	case 0:
+		for (AActor *FarmActor : FoundFarms1)
+		{
+			AFarmLand *FarmInstance = Cast<AFarmLand>(FarmActor);
+			if (FarmInstance)
+			{
+				FarmInstance->IncreaseSuccessRate(BoostedRate);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Farm2 is null!"));
+			}
+		}
+		break;
+
+	default:
+		break;
+	}
 	count++;
 }

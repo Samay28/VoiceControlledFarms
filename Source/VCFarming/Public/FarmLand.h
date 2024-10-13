@@ -20,6 +20,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void InputCropType(int index, float SuccessRate);
 
+	void IncreaseSuccessRate(float Delta);
+
 	float CurrentSuccessRate;
 protected:
 	// Called when the game starts or when spawned

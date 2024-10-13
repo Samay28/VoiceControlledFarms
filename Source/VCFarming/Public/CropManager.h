@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SeasonManager.h"
 #include "CropManager.generated.h"
 
 UCLASS()
@@ -28,10 +27,11 @@ protected:
 	TArray<AActor*> FoundFarms5;
 
 	// Reference to the SeasonManager
-	ASeasonManager* SeasonManager;
+	class ASeasonManager* SeasonManager;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int SelectedCropIndex;
+
 
 	// Internal counter for farm plots
 	int count;
@@ -42,4 +42,14 @@ protected:
 	void selectCropsF3(float SuccessRate);
 	void selectCropsF4(float SuccessRate);
 	void selectCropsF5(float SuccessRate);
+
+	//Utility Part
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int SelectedUtilityIndex;
+
+	UFUNCTION(BlueprintCallable)
+	void AssignBoost();
+	
+	class AUtilityManager* UtilityManager;
+
 };
