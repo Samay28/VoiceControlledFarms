@@ -1,11 +1,12 @@
 #include "MarketManager.h"
 #include "SeasonManager.h"
+#include "EconomyManager.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AMarketManager::AMarketManager()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	
 	PrimaryActorTick.bCanEverTick = true;
 }
 
@@ -14,6 +15,7 @@ void AMarketManager::BeginPlay()
 {
 	Super::BeginPlay();
 	SeasonManager = Cast<ASeasonManager>(UGameplayStatics::GetActorOfClass(GetWorld(), ASeasonManager::StaticClass()));
+	EconomyManager = Cast<AEconomyManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AEconomyManager::StaticClass()));
 	setMarketRates();
 }
 
@@ -22,7 +24,6 @@ void AMarketManager::BeginPlay()
 void AMarketManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void AMarketManager::setMarketRates()
@@ -42,3 +43,15 @@ float AMarketManager::GetMarketPrices(int CropIndex) const
 	}
     return 0.0f;
 }
+
+void AMarketManager::PurchaseCrops()
+{
+	EconomyManager->DeductBalance(15); //deduction crop cost
+}
+
+void AMarketManager::SellHarvest(int CropIndex) //Manually selling each farm harvest over here
+{
+	float* HarvestPrice = CropMarketPrice.Find(CropIndex);
+	EconomyManager->AddBalance(*HarvestPrice);
+}
+

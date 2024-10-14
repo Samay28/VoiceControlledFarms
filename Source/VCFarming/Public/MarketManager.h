@@ -21,11 +21,18 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetMarketPrices(int CropIndex) const;
 
+	UFUNCTION(BlueprintCallable)
+	void PurchaseCrops();
+
+	UFUNCTION(BlueprintCallable)
+	void SellHarvest(int CropIndex);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	class ASeasonManager* SeasonManager;
+	class AEconomyManager* EconomyManager;
 
 	UPROPERTY(EditAnywhere)
     TMap<int, float> CropMarketPrice;
