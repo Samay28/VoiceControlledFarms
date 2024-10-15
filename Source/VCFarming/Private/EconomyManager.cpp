@@ -16,7 +16,7 @@ AEconomyManager::AEconomyManager()
 void AEconomyManager::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
 }
 
 // Called every frame
@@ -29,11 +29,13 @@ void AEconomyManager::Tick(float DeltaTime)
 void AEconomyManager::DeductBalance(int amnt)
 {
 	Money -=amnt;
+	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
 }
 
 void AEconomyManager::AddBalance(int amnt)
 {
 	Money +=amnt;
+	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
 }
 
 int AEconomyManager::GetMoney()
