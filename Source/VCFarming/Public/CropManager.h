@@ -18,6 +18,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void AssignCrops();
 
+	// Internal counter for farm plots
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int count;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int Ucount;
+
 protected:
 	// Farm instances arrays for each type of farm
 	TArray<AActor*> FoundFarms1;
@@ -33,9 +39,6 @@ protected:
 	int SelectedCropIndex;
 
 
-	// Internal counter for farm plots
-	int count;
-	int Ucount;
 
 	// Crop selection methods for each farm type
 	void selectCropsF1(float SuccessRate);

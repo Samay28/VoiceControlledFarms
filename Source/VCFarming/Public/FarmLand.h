@@ -23,6 +23,8 @@ public:
 	void IncreaseSuccessRate(float Delta);
 
 	float CurrentSuccessRate;
+
+	bool CropsGrown;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

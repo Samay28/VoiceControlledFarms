@@ -40,5 +40,6 @@ public:
 
 	void IncreaseSuccessRate(float Delta);
 
+	bool CropsGrown;
 	
 };

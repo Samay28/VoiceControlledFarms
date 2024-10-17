@@ -14,7 +14,7 @@ class VCFARMING_API AFarmLand4 : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AFarmLand4();
-
+	bool CropsGrown;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -24,6 +24,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* CropTypeMesh;
+
+	
 
 public:	
 	// Called every frame

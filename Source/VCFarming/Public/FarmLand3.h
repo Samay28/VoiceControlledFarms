@@ -25,6 +25,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* CropTypeMesh;
 
+	
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -37,5 +39,5 @@ public:
 	TArray<UStaticMesh*> CropMeshes;
 
 	void IncreaseSuccessRate(float Delta);
-
+	bool CropsGrown;
 };
