@@ -160,12 +160,6 @@ void ACropManager::AssignCrops()
 }
 void ACropManager::AssignBoost()
 {
-    // Ensure Ucount only runs up to the value of count
-    // if (Ucount >= count)
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("Ucount exceeds the number of farms with assigned crops!"));
-    //     return;
-    // }
 
     float BoostedRate = UtilityManager->GetBoostSuccessRate(SelectedUtilityIndex);
 
