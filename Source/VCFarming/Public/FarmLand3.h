@@ -40,4 +40,12 @@ public:
 
 	void IncreaseSuccessRate(float Delta);
 	bool CropsGrown;
+
+	void StartHarvestTimer();
+	void Harvest();
+private:
+
+	FTimerHandle CountdownTimerHandle;
+    int32 RemainingTime;
+	void UpdateCountdown();
 };

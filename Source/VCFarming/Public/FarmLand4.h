@@ -42,4 +42,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UStaticMesh*> CropMeshes;
 
+	void StartHarvestTimer();
+	void Harvest();
+private:
+
+	FTimerHandle CountdownTimerHandle;
+    int32 RemainingTime;
+	void UpdateCountdown();
+
 };

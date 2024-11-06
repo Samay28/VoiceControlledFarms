@@ -1,6 +1,7 @@
 
 
 #include "FarmLand4.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AFarmLand4::AFarmLand4()
@@ -12,7 +13,7 @@ AFarmLand4::AFarmLand4()
 
 	CropTypeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CropMesh"));
 	CropTypeMesh->SetupAttachment(FarmMesh);
-
+	RemainingTime = 60;
 }
 
 // Called when the game starts or when spawned
@@ -38,7 +39,27 @@ void AFarmLand4::InputCropType(int index, float SuccessRate)
 		CurrentSuccessRate = SuccessRate;
 		UE_LOG(LogTemp, Warning, TEXT("CurrentSuccessRate : %f"), CurrentSuccessRate);
 		CropsGrown = true;
+		StartHarvestTimer();
 	}
+}
+void AFarmLand4::StartHarvestTimer()
+{
+	RemainingTime = 60;
+
+    GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand4::UpdateCountdown, 1.0f, true);
+}
+
+
+void AFarmLand4::UpdateCountdown()
+{
+	RemainingTime--;
+	UE_LOG(LogTemp, Warning, TEXT("Time remaining: %d seconds"), RemainingTime);
+
+    if (RemainingTime <= 0)
+    {
+        GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
+        UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
+    }
 }
 
 void AFarmLand4::IncreaseSuccessRate(float Delta)

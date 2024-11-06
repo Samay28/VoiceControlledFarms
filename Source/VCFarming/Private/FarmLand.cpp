@@ -61,7 +61,6 @@ void AFarmLand::UpdateCountdown()
     {
         GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
         UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
-    
     }
 }
 void AFarmLand::Harvest()
