@@ -1,4 +1,6 @@
 #include "FarmLand2.h"
+#include "EconomyManager.h"
+#include "MarketManager.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -13,6 +15,7 @@ AFarmLand2::AFarmLand2()
 	CropTypeMesh->SetupAttachment(FarmMesh);
 
 	RemainingTime = 60;
+	CurrentCropIndex = 0;
 
 }
 
@@ -21,6 +24,9 @@ void AFarmLand2::BeginPlay()
 {
 	Super::BeginPlay();
 	CropTypeMesh->SetVisibility(false);
+
+	Economy = Cast<AEconomyManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AEconomyManager::StaticClass()));
+	MarketManager = Cast<AMarketManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AMarketManager::StaticClass()));
 }
 
 // Called every frame
@@ -45,7 +51,7 @@ void AFarmLand2::InputCropType(int index, float SuccessRate)
 
 void AFarmLand2::StartHarvestTimer()
 {
-	RemainingTime = 60;
+	RemainingTime = 10;
 
     GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand2::UpdateCountdown, 1.0f, true);
 }
@@ -60,6 +66,18 @@ void AFarmLand2::UpdateCountdown()
     {
         GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
         UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
+
+		bool bHarvestSuccess = FMath::FRand() <= CurrentSuccessRate;
+
+		if(bHarvestSuccess)
+		{
+			MarketManager->SellHarvest(CurrentCropIndex); //GET MARKET PRICE
+			
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Harvest Failed!"));
+		}
 		CropTypeMesh->SetVisibility(false);
 		CropsGrown = false;
     }

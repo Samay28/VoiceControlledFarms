@@ -40,9 +40,12 @@ public:
 
 	void IncreaseSuccessRate(float Delta);
 	bool CropsGrown;
+	int CurrentCropIndex;
 
 	void StartHarvestTimer();
-	void Harvest();
+
+	class AEconomyManager* Economy;
+	class AMarketManager* MarketManager;
 private:
 
 	FTimerHandle CountdownTimerHandle;

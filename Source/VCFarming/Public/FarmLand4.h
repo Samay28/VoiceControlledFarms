@@ -15,6 +15,7 @@ public:
 	// Sets default values for this actor's properties
 	AFarmLand4();
 	bool CropsGrown;
+	int CurrentCropIndex;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -43,7 +44,10 @@ public:
 	TArray<UStaticMesh*> CropMeshes;
 
 	void StartHarvestTimer();
-	void Harvest();
+
+
+	class AEconomyManager* Economy;
+	class AMarketManager* MarketManager;
 private:
 
 	FTimerHandle CountdownTimerHandle;

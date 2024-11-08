@@ -39,7 +39,6 @@ protected:
 	TArray<UStaticMesh*> CropMeshes;
 
 	void StartHarvestTimer();
-	void Harvest();
 
 	class AEconomyManager* Economy;
 	class AMarketManager* MarketManager;

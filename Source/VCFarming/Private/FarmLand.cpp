@@ -83,10 +83,7 @@ void AFarmLand::UpdateCountdown()
 		CropsGrown = false;
     }
 }
-void AFarmLand::Harvest()
-{
 
-}
 
 void AFarmLand::IncreaseSuccessRate(float Delta)
 {
