@@ -59,6 +59,8 @@ void AFarmLand3::UpdateCountdown()
     {
         GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
         UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
+		CropTypeMesh->SetVisibility(false);
+		CropsGrown = false;
     }
 }
 

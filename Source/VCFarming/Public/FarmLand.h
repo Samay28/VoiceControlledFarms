@@ -23,7 +23,7 @@ public:
 	void IncreaseSuccessRate(float Delta);
 
 	float CurrentSuccessRate;
-
+	int CurrentCropIndex;
 	bool CropsGrown;
 protected:
 	// Called when the game starts or when spawned
@@ -40,6 +40,9 @@ protected:
 
 	void StartHarvestTimer();
 	void Harvest();
+
+	class AEconomyManager* Economy;
+	class AMarketManager* MarketManager;
 private:
 
 	FTimerHandle CountdownTimerHandle;
