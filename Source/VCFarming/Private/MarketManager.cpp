@@ -46,7 +46,8 @@ float AMarketManager::GetMarketPrices(int CropIndex) const
 
 void AMarketManager::PurchaseCrops()
 {
-	EconomyManager->DeductBalance(15); //deduction crop cost
+	EconomyManager->DeductBalance(15*24); //deduction crop cost
+	UE_LOG(LogTemp, Warning, TEXT("Balance Deducted!"));
 }
 
 void AMarketManager::SellHarvest(int CropIndex) //Manually selling each farm harvest over here

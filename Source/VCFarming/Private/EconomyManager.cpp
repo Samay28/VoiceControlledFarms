@@ -8,7 +8,6 @@ AEconomyManager::AEconomyManager()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	SetMoney(100);
 
 }
 
@@ -16,6 +15,7 @@ AEconomyManager::AEconomyManager()
 void AEconomyManager::BeginPlay()
 {
 	Super::BeginPlay();
+	SetMoney(400);
 	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
 }
 
@@ -45,5 +45,5 @@ int AEconomyManager::GetMoney()
 
 void AEconomyManager::SetMoney(int amnt)
 {
-	amnt = Money;
+	Money = amnt;
 }
