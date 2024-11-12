@@ -16,6 +16,7 @@ public:
 
     virtual void BeginPlay() override;
 
+    UFUNCTION(BlueprintCallable)
     float GetBoostSuccessRate(int UtilityIndex) const;
 
 protected:    

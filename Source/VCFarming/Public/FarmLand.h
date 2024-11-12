@@ -22,7 +22,9 @@ public:
 
 	void IncreaseSuccessRate(float Delta);
 
+	UPROPERTY(BlueprintReadWrite)
 	float CurrentSuccessRate;
+	
 	int CurrentCropIndex;
 	bool CropsGrown;
 protected:
