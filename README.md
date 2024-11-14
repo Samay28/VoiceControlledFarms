@@ -10,7 +10,7 @@ Traditional learning lacks **engagement, accessibility, and practical applicatio
 - **Vocational Skill Training**: Create scenarios that simulate real-world skills like farming, economics, and risk management.
 
 ## **Core Gameplay Concept** 🌾🚜
-- **Objective**: Players manage 4 plots of land, using strategies to maximize earnings in 30-minute sessions (10-15 harvests).
+- **Objective**: Players manage 5 plots of land, using strategies to maximize earnings in 30-minute sessions (10-15 harvests).
 - **Dynamic Starting Conditions**: Begin with fixed capital, randomized seasons (e.g., summer, winter) affecting crop choice and success rates.
 
 ## **Major Features & Player Choices**  🕹🎮🖱
