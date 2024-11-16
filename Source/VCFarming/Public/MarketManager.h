@@ -27,6 +27,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SellHarvest(int CropIndex);
 
+	void SellHarvestAtHalf(int CropIndex);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

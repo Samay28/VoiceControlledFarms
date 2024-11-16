@@ -27,8 +27,11 @@ public:
 	
 	int CurrentCropIndex;
 	bool CropsGrown;
+
+	UPROPERTY(BlueprintReadWrite)
+	float QualityCompromisePerc;
 protected:
-	// Called when the game starts or when spawned
+
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

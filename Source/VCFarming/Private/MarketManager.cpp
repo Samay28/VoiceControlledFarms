@@ -56,3 +56,11 @@ void AMarketManager::SellHarvest(int CropIndex) //Manually selling each farm har
 	EconomyManager->AddBalance(*HarvestPrice);
 }
 
+void AMarketManager::SellHarvestAtHalf(int CropIndex)
+{
+	float* HarvestPrice = (CropMarketPrice.Find(CropIndex));
+
+	float HP = *HarvestPrice/2;
+	EconomyManager->AddBalance(HP);
+}
+

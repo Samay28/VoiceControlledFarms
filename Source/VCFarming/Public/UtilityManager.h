@@ -19,7 +19,11 @@ public:
     UFUNCTION(BlueprintCallable)
     float GetBoostSuccessRate(int UtilityIndex) const;
 
+
+
 protected:    
     void InitializeBoostRates();
+
+    
     
 };

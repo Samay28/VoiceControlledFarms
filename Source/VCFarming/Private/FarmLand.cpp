@@ -18,7 +18,7 @@ AFarmLand::AFarmLand()
 
 	RemainingTime = 60;
 	CurrentCropIndex = 0;
-
+	QualityCompromisePerc = 100;
 }
 
 void AFarmLand::BeginPlay()
@@ -30,7 +30,6 @@ void AFarmLand::BeginPlay()
 	MarketManager = Cast<AMarketManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AMarketManager::StaticClass()));
 }
 
-
 void AFarmLand::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -39,7 +38,7 @@ void AFarmLand::Tick(float DeltaTime)
 void AFarmLand::InputCropType(int index, float SuccessRate)
 {
 	if (CropMeshes.IsValidIndex(index))
-	{	
+	{
 		CurrentCropIndex = index;
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
@@ -54,26 +53,33 @@ void AFarmLand::StartHarvestTimer()
 {
 	RemainingTime = 10;
 
-    GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand::UpdateCountdown, 1.0f, true);
+	GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand::UpdateCountdown, 1.0f, true);
 }
-
 
 void AFarmLand::UpdateCountdown()
 {
 	RemainingTime--;
 	UE_LOG(LogTemp, Warning, TEXT("Time remaining: %d seconds"), RemainingTime);
 
-    if (RemainingTime <= 0)
-    {
-        GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
-        UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
+	if (RemainingTime <= 0)
+	{
+		GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
+		UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
 
 		bool bHarvestSuccess = FMath::FRand() <= CurrentSuccessRate;
+		bool bQualityCompromised = FMath::FRand() <= QualityCompromisePerc;
 
-		if(bHarvestSuccess)
+		if (bHarvestSuccess)
 		{
-			MarketManager->SellHarvest(CurrentCropIndex); //GET MARKET PRICE
-			
+			if (bQualityCompromised)
+			{
+				MarketManager->SellHarvestAtHalf(CurrentCropIndex);
+				UE_LOG(LogTemp, Warning, TEXT("sold in half"));
+			}
+			else
+			{
+				MarketManager->SellHarvest(CurrentCropIndex); // GET MARKET PRICE
+			}
 		}
 		else
 		{
@@ -81,9 +87,8 @@ void AFarmLand::UpdateCountdown()
 		}
 		CropTypeMesh->SetVisibility(false);
 		CropsGrown = false;
-    }
+	}
 }
-
 
 void AFarmLand::IncreaseSuccessRate(float Delta)
 {
