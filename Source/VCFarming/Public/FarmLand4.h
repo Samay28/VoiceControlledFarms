@@ -48,6 +48,9 @@ public:
 
 	class AEconomyManager* Economy;
 	class AMarketManager* MarketManager;
+
+	UPROPERTY(BlueprintReadWrite)
+	float QualityCompromisePerc;
 private:
 
 	FTimerHandle CountdownTimerHandle;

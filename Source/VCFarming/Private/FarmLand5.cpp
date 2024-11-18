@@ -15,6 +15,7 @@ AFarmLand5::AFarmLand5()
 	CropTypeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CropMesh"));
 	CropTypeMesh->SetupAttachment(FarmMesh);
 	RemainingTime = 60;
+	QualityCompromisePerc = 100;
 	CurrentCropIndex = 0;
 }
 
@@ -63,14 +64,19 @@ void AFarmLand5::UpdateCountdown()
 		UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
 
 		bool bHarvestSuccess = FMath::FRand() <= CurrentSuccessRate;
+		bool bQualityCompromised = FMath::FRand() <= QualityCompromisePerc;
 
 		if (bHarvestSuccess)
 		{
-			MarketManager->SellHarvest(CurrentCropIndex); // GET MARKET PRICE
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Harvest Failed!"));
+			if (bQualityCompromised)
+			{
+				MarketManager->SellHarvestAtHalf(CurrentCropIndex);
+				UE_LOG(LogTemp, Warning, TEXT("sold in half"));
+			}
+			else
+			{
+				MarketManager->SellHarvest(CurrentCropIndex); // GET MARKET PRICE
+			}
 		}
 		CropTypeMesh->SetVisibility(false);
 		CropsGrown = false;
