@@ -22,7 +22,7 @@ public:
 	float GetMarketPrices(int CropIndex) const;
 
 	UFUNCTION(BlueprintCallable)
-	void PurchaseCrops();
+	bool PurchaseCrops();
 
 	UFUNCTION(BlueprintCallable)
 	void SellHarvest(int CropIndex);

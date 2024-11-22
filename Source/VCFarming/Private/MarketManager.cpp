@@ -6,7 +6,7 @@
 // Sets default values
 AMarketManager::AMarketManager()
 {
- 	
+
 	PrimaryActorTick.bCanEverTick = true;
 }
 
@@ -19,7 +19,6 @@ void AMarketManager::BeginPlay()
 	setMarketRates();
 }
 
-
 // Called every frame
 void AMarketManager::Tick(float DeltaTime)
 {
@@ -28,39 +27,46 @@ void AMarketManager::Tick(float DeltaTime)
 
 void AMarketManager::setMarketRates()
 {
-	for(int i=0; i<11; i++)
+	for (int i = 0; i < 11; i++)
 	{
 		float price = SeasonManager->GetMarketPrice(i);
-		CropMarketPrice.Add(i,price);
+		CropMarketPrice.Add(i, price);
 	}
 }
 float AMarketManager::GetMarketPrices(int CropIndex) const
-{	
-	const float* FoundPrice = CropMarketPrice.Find(CropIndex);
-	if(FoundPrice)
+{
+	const float *FoundPrice = CropMarketPrice.Find(CropIndex);
+	if (FoundPrice)
 	{
 		return *FoundPrice;
 	}
-    return 0.0f;
+	return 0.0f;
 }
 
-void AMarketManager::PurchaseCrops()
+bool AMarketManager::PurchaseCrops()
 {
-	EconomyManager->DeductBalance(15*24); //deduction crop cost
-	UE_LOG(LogTemp, Warning, TEXT("Balance Deducted!"));
+	if (EconomyManager->GetMoney() < 360)
+	{
+		return false;
+	}
+	else
+	{
+		EconomyManager->DeductBalance(15 * 24); // deduction crop cost
+		UE_LOG(LogTemp, Warning, TEXT("Balance Deducted!"));
+		return true;
+	}
 }
 
-void AMarketManager::SellHarvest(int CropIndex) //Manually selling each farm harvest over here
+void AMarketManager::SellHarvest(int CropIndex) // Manually selling each farm harvest over here
 {
-	float* HarvestPrice = CropMarketPrice.Find(CropIndex);
+	float *HarvestPrice = CropMarketPrice.Find(CropIndex);
 	EconomyManager->AddBalance(*HarvestPrice);
 }
 
 void AMarketManager::SellHarvestAtHalf(int CropIndex)
 {
-	float* HarvestPrice = (CropMarketPrice.Find(CropIndex));
+	float *HarvestPrice = (CropMarketPrice.Find(CropIndex));
 
-	float HP = *HarvestPrice/2;
+	float HP = *HarvestPrice / 2;
 	EconomyManager->AddBalance(HP);
 }
-

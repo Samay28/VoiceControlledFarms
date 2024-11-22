@@ -13,6 +13,7 @@ public:
 
     UPROPERTY(EditAnywhere)
     TMap<int, float> UtilityBoostRates;
+    TMap<int, float> UtilityCost;
 
     virtual void BeginPlay() override;
 
@@ -23,6 +24,7 @@ public:
 
 protected:    
     void InitializeBoostRates();
+    void InitializeCost();
 
     
     
