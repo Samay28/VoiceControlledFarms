@@ -45,6 +45,32 @@ float AUtilityManager::GetBoostSuccessRate(int UtilityIndex) const
     return boostRate;
 }
 
+float AUtilityManager::GetMoneyDeducted(int UtilityIndex) const
+{
+    float cost = 0.0f;
+    if (UtilityIndex == 0 || UtilityIndex == 3 || UtilityIndex == 6 || UtilityIndex == 9)
+    {
+
+        cost = 50;
+    }
+    else if (UtilityIndex == 1 || UtilityIndex == 4 || UtilityIndex == 7 || UtilityIndex == 10)
+    {
+
+        cost = 30;
+    }
+    else if (UtilityIndex == 2 || UtilityIndex == 5 || UtilityIndex == 8 || UtilityIndex == 11)
+    {
+
+        cost = 15;
+    }
+    else
+    {
+
+        cost = 0;
+    }
+    return cost;
+}
+
 void AUtilityManager::InitializeBoostRates()
 {
     for (int UI = 0; UI < 14; UI++)
@@ -58,7 +84,7 @@ void AUtilityManager::InitializeCost()
 {
     for (int UI = 0; UI < 14; UI++)
     {
-        float costs = GetBoostSuccessRate(UI);
+        float costs = GetMoneyDeducted(UI);
         UtilityCost.Add(UI, costs);
     }
 }

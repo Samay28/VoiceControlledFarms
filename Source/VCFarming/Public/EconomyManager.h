@@ -23,7 +23,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void AddBalance(int amnt);
 
+	UFUNCTION(BlueprintCallable)
 	int GetMoney();
+	
 	void SetMoney(int amnt);
 
 protected:

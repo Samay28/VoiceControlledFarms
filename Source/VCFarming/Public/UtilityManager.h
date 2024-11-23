@@ -20,6 +20,9 @@ public:
     UFUNCTION(BlueprintCallable)
     float GetBoostSuccessRate(int UtilityIndex) const;
 
+    UFUNCTION(BlueprintCallable)
+    float GetMoneyDeducted(int UtilityIndex) const;
+
 
 
 protected:    
