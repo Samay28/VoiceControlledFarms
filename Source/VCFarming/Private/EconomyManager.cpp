@@ -1,14 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 
 #include "EconomyManager.h"
 
-// Sets default values
+
 AEconomyManager::AEconomyManager()
 {
  	
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
