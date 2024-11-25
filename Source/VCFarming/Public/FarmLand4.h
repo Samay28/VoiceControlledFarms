@@ -14,7 +14,13 @@ class VCFARMING_API AFarmLand4 : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AFarmLand4();
+
+	UPROPERTY(BlueprintReadOnly)
 	bool CropsGrown;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool EquipmentAccessed;
+	
 	int CurrentCropIndex;
 protected:
 	// Called when the game starts or when spawned

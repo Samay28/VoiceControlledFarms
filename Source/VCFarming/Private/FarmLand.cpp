@@ -51,7 +51,7 @@ void AFarmLand::InputCropType(int index, float SuccessRate)
 
 void AFarmLand::StartHarvestTimer()
 {
-	RemainingTime = 10;
+	RemainingTime = 30;
 
 	GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand::UpdateCountdown, 1.0f, true);
 }
@@ -87,6 +87,7 @@ void AFarmLand::UpdateCountdown()
 		}
 		CropTypeMesh->SetVisibility(false);
 		CropsGrown = false;
+		EquipmentAccessed = false;
 	}
 }
 

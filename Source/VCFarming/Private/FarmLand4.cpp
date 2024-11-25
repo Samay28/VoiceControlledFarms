@@ -80,6 +80,7 @@ void AFarmLand4::UpdateCountdown()
 			}
 		}
 		CropTypeMesh->SetVisibility(false);
+		EquipmentAccessed = false;
 		CropsGrown = false;
 	}
 }

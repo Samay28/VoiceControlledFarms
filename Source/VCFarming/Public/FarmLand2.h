@@ -43,7 +43,12 @@ public:
 
 	void IncreaseSuccessRate(float Delta);
 
+	UPROPERTY(BlueprintReadOnly)
 	bool CropsGrown;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool EquipmentAccessed;
+	
 	void StartHarvestTimer();
 
 	class AEconomyManager* Economy;

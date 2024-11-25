@@ -40,7 +40,12 @@ public:
 	TArray<UStaticMesh*> CropMeshes;
 
 	void IncreaseSuccessRate(float Delta);
+	UPROPERTY(BlueprintReadOnly)
 	bool CropsGrown;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool EquipmentAccessed;
+	
 	int CurrentCropIndex;
 
 	void StartHarvestTimer();

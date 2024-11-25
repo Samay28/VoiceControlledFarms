@@ -26,7 +26,12 @@ public:
 	float CurrentSuccessRate;
 	
 	int CurrentCropIndex;
+
+	UPROPERTY(BlueprintReadOnly)
 	bool CropsGrown;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool EquipmentAccessed;
 
 	UPROPERTY(BlueprintReadWrite)
 	float QualityCompromisePerc;
