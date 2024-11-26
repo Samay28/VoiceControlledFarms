@@ -48,7 +48,7 @@ void AFarmLand5::InputCropType(int index, float SuccessRate)
 }
 void AFarmLand5::StartHarvestTimer()
 {
-	RemainingTime = 10;
+	RemainingTime = 30;
 
 	GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand5::UpdateCountdown, 1.0f, true);
 }
