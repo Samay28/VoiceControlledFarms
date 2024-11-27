@@ -24,6 +24,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int Ucount;
 
+	UPROPERTY(EditAnywhere, Category = "Crop Name")
+	TMap<int32, FString> CropIndexToName;
+
+	UFUNCTION(BlueprintCallable)
+	FString PrintCropName(int selectedIndex);
+	
+
 protected:
 	// Farm instances arrays for each type of farm
 	TArray<AActor*> FoundFarms1;

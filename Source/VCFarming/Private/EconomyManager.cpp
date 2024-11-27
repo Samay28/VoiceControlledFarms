@@ -12,7 +12,7 @@ AEconomyManager::AEconomyManager()
 void AEconomyManager::BeginPlay()
 {
 	Super::BeginPlay();
-	SetMoney(400);
+	SetMoney(1000);
 	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
 }
 

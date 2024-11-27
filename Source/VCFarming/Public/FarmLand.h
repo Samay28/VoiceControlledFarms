@@ -35,6 +35,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite)
 	float QualityCompromisePerc;
+
+	UPROPERTY(BlueprintReadOnly)
+    int32 RemainingTime;
 protected:
 
 	virtual void BeginPlay() override;
@@ -55,7 +58,6 @@ protected:
 private:
 
 	FTimerHandle CountdownTimerHandle;
-    int32 RemainingTime;
 	void UpdateCountdown();
 
 };

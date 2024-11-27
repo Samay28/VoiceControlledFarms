@@ -17,7 +17,7 @@ AFarmLand::AFarmLand()
 	CropTypeMesh->SetupAttachment(FarmMesh);
 
 	RemainingTime = 60;
-	CurrentCropIndex = 0;
+	CurrentCropIndex = 110;
 	QualityCompromisePerc = 100;
 }
 
@@ -88,6 +88,9 @@ void AFarmLand::UpdateCountdown()
 		CropTypeMesh->SetVisibility(false);
 		CropsGrown = false;
 		EquipmentAccessed = false;
+		CurrentSuccessRate = 0;
+		CurrentCropIndex = 111;
+		QualityCompromisePerc = 100;
 	}
 }
 

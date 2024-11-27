@@ -14,7 +14,7 @@ ACropManager::ACropManager()
 	PrimaryActorTick.bCanEverTick = true;
 	count = 0;
 	Ucount = 0;
-	SelectedCropIndex = 0;
+	SelectedCropIndex = 110;
 	SeasonManager = nullptr; // Initialize pointer to null
 }
 
@@ -156,91 +156,101 @@ void ACropManager::AssignCrops()
 		UE_LOG(LogTemp, Warning, TEXT("No more farms to assign crops to!"));
 		return;
 	}
-
 }
+
+FString ACropManager::PrintCropName(int selectedIndex)
+{
+	if (CropIndexToName.Contains(selectedIndex))
+    {
+        return *CropIndexToName.Find(selectedIndex);
+    }
+
+
+    return TEXT("No Crop");
+}
+
 void ACropManager::AssignBoost()
 {
 
-    float BoostedRate = UtilityManager->GetBoostSuccessRate(SelectedUtilityIndex);
+	float BoostedRate = UtilityManager->GetBoostSuccessRate(SelectedUtilityIndex);
 
-    switch (count)
-    {
-    case 0:
-        for (AActor *FarmActor : FoundFarms1)
-        {
-            AFarmLand *FarmInstance = Cast<AFarmLand>(FarmActor);
-            if (FarmInstance->CropsGrown)
-            {
-                FarmInstance->IncreaseSuccessRate(BoostedRate);
-            }
-            else
-            {
-                UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
-            }
-        }
-        break;
-    case 1:
-        for (AActor *FarmActor : FoundFarms2)
-        {
-            AFarmLand2 *FarmInstance = Cast<AFarmLand2>(FarmActor);
-            if (FarmInstance->CropsGrown)
-            {
-                FarmInstance->IncreaseSuccessRate(BoostedRate);
-            }
-            else
-            {
-                UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
-            }
-        }
-        break;
-    case 2:
-        for (AActor *FarmActor : FoundFarms3)
-        {
-            AFarmLand3 *FarmInstance = Cast<AFarmLand3>(FarmActor);
-            if (FarmInstance->CropsGrown)
-            {
-                FarmInstance->IncreaseSuccessRate(BoostedRate);
-            }
-            else
-            {
-                UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
-            }
-        }
-        break;
-    case 3:
-        for (AActor *FarmActor : FoundFarms4)
-        {
-            AFarmLand4 *FarmInstance = Cast<AFarmLand4>(FarmActor);
-            if (FarmInstance->CropsGrown)
-            {
-                FarmInstance->IncreaseSuccessRate(BoostedRate);
-            }
-            else
-            {
-                UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
-            }
-        }
-        break;
-    case 4:
-        for (AActor *FarmActor : FoundFarms5)
-        {
-            AFarmLand5 *FarmInstance = Cast<AFarmLand5>(FarmActor);
-            if (FarmInstance->CropsGrown)
-            {
-                FarmInstance->IncreaseSuccessRate(BoostedRate);
-            }
-            else
-            {
-                UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
-            }
-        }
-        break;
+	switch (count)
+	{
+	case 0:
+		for (AActor *FarmActor : FoundFarms1)
+		{
+			AFarmLand *FarmInstance = Cast<AFarmLand>(FarmActor);
+			if (FarmInstance->CropsGrown)
+			{
+				FarmInstance->IncreaseSuccessRate(BoostedRate);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
+			}
+		}
+		break;
+	case 1:
+		for (AActor *FarmActor : FoundFarms2)
+		{
+			AFarmLand2 *FarmInstance = Cast<AFarmLand2>(FarmActor);
+			if (FarmInstance->CropsGrown)
+			{
+				FarmInstance->IncreaseSuccessRate(BoostedRate);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
+			}
+		}
+		break;
+	case 2:
+		for (AActor *FarmActor : FoundFarms3)
+		{
+			AFarmLand3 *FarmInstance = Cast<AFarmLand3>(FarmActor);
+			if (FarmInstance->CropsGrown)
+			{
+				FarmInstance->IncreaseSuccessRate(BoostedRate);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
+			}
+		}
+		break;
+	case 3:
+		for (AActor *FarmActor : FoundFarms4)
+		{
+			AFarmLand4 *FarmInstance = Cast<AFarmLand4>(FarmActor);
+			if (FarmInstance->CropsGrown)
+			{
+				FarmInstance->IncreaseSuccessRate(BoostedRate);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
+			}
+		}
+		break;
+	case 4:
+		for (AActor *FarmActor : FoundFarms5)
+		{
+			AFarmLand5 *FarmInstance = Cast<AFarmLand5>(FarmActor);
+			if (FarmInstance->CropsGrown)
+			{
+				FarmInstance->IncreaseSuccessRate(BoostedRate);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("crops not grown"));
+			}
+		}
+		break;
 
-    default:
-        UE_LOG(LogTemp, Warning, TEXT("No more farms to boost!"));
-        break;
-    }
+	default:
+		UE_LOG(LogTemp, Warning, TEXT("No more farms to boost!"));
+		break;
+	}
 
-    Ucount++;
+	Ucount++;
 }
-
