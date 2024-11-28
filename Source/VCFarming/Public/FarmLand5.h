@@ -24,7 +24,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* CropTypeMesh;
 
-	
+	UPROPERTY(BlueprintReadOnly)
+    int32 RemainingTime;
 
 public:	
 	// Called every frame
@@ -47,6 +48,7 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	bool EquipmentAccessed;
 	
+	UPROPERTY(BlueprintReadOnly)
 	int CurrentCropIndex;
 
 	void StartHarvestTimer();
@@ -59,6 +61,6 @@ public:
 private:
 
 	FTimerHandle CountdownTimerHandle;
-    int32 RemainingTime;
+
 	void UpdateCountdown();
 };

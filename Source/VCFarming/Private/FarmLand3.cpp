@@ -16,7 +16,7 @@ AFarmLand3::AFarmLand3()
 	CropTypeMesh->SetupAttachment(FarmMesh);
 	RemainingTime = 60;
 	QualityCompromisePerc = 100;
-	CurrentCropIndex = 0;
+	CurrentCropIndex = 110;
 }
 
 // Called when the game starts or when spawned
@@ -38,7 +38,8 @@ void AFarmLand3::Tick(float DeltaTime)
 void AFarmLand3::InputCropType(int index, float SuccessRate)
 {
 	if (CropMeshes.IsValidIndex(index))
-	{
+	{	
+		CurrentCropIndex = index;
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
 		CurrentSuccessRate = SuccessRate;
@@ -84,6 +85,9 @@ void AFarmLand3::UpdateCountdown()
 		CropTypeMesh->SetVisibility(false);
 		EquipmentAccessed = false;
 		CropsGrown = false;
+		CurrentSuccessRate = 0;
+		CurrentCropIndex = 111;
+		QualityCompromisePerc = 100;
 	}
 }
 

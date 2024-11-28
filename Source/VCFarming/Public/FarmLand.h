@@ -25,6 +25,7 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	float CurrentSuccessRate;
 	
+	UPROPERTY(BlueprintReadOnly)
 	int CurrentCropIndex;
 
 	UPROPERTY(BlueprintReadOnly)

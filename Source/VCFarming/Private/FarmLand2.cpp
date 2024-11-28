@@ -6,7 +6,7 @@
 // Sets default values
 AFarmLand2::AFarmLand2()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	FarmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FarmMesh"));
 	FarmMesh->SetupAttachment(GetRootComponent());
@@ -16,8 +16,7 @@ AFarmLand2::AFarmLand2()
 
 	RemainingTime = 60;
 	QualityCompromisePerc = 100;
-	CurrentCropIndex = 0;
-
+	CurrentCropIndex = 110;
 }
 
 // Called when the game starts or when spawned
@@ -34,13 +33,13 @@ void AFarmLand2::BeginPlay()
 void AFarmLand2::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void AFarmLand2::InputCropType(int index, float SuccessRate)
 {
-	if(CropMeshes.IsValidIndex(index))
-	{
+	if (CropMeshes.IsValidIndex(index))
+	{	
+		CurrentCropIndex = index;
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
 		CurrentSuccessRate = SuccessRate;
@@ -54,19 +53,18 @@ void AFarmLand2::StartHarvestTimer()
 {
 	RemainingTime = 30;
 
-    GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand2::UpdateCountdown, 1.0f, true);
+	GetWorld()->GetTimerManager().SetTimer(CountdownTimerHandle, this, &AFarmLand2::UpdateCountdown, 1.0f, true);
 }
-
 
 void AFarmLand2::UpdateCountdown()
 {
 	RemainingTime--;
 	UE_LOG(LogTemp, Warning, TEXT("Time remaining: %d seconds"), RemainingTime);
 
-    if (RemainingTime <= 0)
-    {
-        GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
-        UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
+	if (RemainingTime <= 0)
+	{
+		GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
+		UE_LOG(LogTemp, Warning, TEXT("Harvest timer finished!"));
 
 		bool bHarvestSuccess = FMath::FRand() <= CurrentSuccessRate;
 		bool bQualityCompromised = FMath::FRand() <= QualityCompromisePerc;
@@ -86,7 +84,10 @@ void AFarmLand2::UpdateCountdown()
 		CropTypeMesh->SetVisibility(false);
 		EquipmentAccessed = false;
 		CropsGrown = false;
-    }
+		CurrentSuccessRate = 0;
+		CurrentCropIndex = 111;
+		QualityCompromisePerc = 100;
+	}
 }
 
 void AFarmLand2::IncreaseSuccessRate(float Delta)

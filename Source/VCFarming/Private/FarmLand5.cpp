@@ -16,7 +16,7 @@ AFarmLand5::AFarmLand5()
 	CropTypeMesh->SetupAttachment(FarmMesh);
 	RemainingTime = 60;
 	QualityCompromisePerc = 100;
-	CurrentCropIndex = 0;
+	CurrentCropIndex = 110;
 }
 
 void AFarmLand5::BeginPlay()
@@ -37,7 +37,8 @@ void AFarmLand5::Tick(float DeltaTime)
 void AFarmLand5::InputCropType(int index, float SuccessRate)
 {
 	if (CropMeshes.IsValidIndex(index))
-	{
+	{	
+		CurrentCropIndex = index;
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
 		CurrentSuccessRate = SuccessRate;
@@ -81,6 +82,9 @@ void AFarmLand5::UpdateCountdown()
 		CropTypeMesh->SetVisibility(false);
 		EquipmentAccessed = false;
 		CropsGrown = false;
+		CurrentSuccessRate = 0;
+		CurrentCropIndex = 111;
+		QualityCompromisePerc = 100;
 	}
 }
 void AFarmLand5::IncreaseSuccessRate(float Delta)

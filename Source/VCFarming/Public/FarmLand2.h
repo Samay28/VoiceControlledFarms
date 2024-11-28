@@ -25,9 +25,11 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* CropTypeMesh;
 
+	UPROPERTY(BlueprintReadOnly)
 	int CurrentCropIndex;
 
-
+	UPROPERTY(BlueprintReadOnly)
+    int32 RemainingTime;
 public:	
 
 	virtual void Tick(float DeltaTime) override;
@@ -60,7 +62,7 @@ public:
 private:
 
 	FTimerHandle CountdownTimerHandle;
-    int32 RemainingTime;
+
 	void UpdateCountdown();
 	
 };
