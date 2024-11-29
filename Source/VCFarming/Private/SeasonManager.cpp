@@ -53,10 +53,10 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
                 case 4:  // Pepper plant
                 case 5:  // Cucumber
                 case 6:  // Watermelon
-                    BaseRate = FMath::RandRange(0.7f, 0.9f);  // High rate for summer crops
+                    BaseRate = FMath::RandRange(0.7f, 0.75f);  // High rate for summer crops
                     break;
                 default:
-                    BaseRate = FMath::RandRange(0.2f, 0.4f);  // Low rate for winter crops
+                    BaseRate = FMath::RandRange(0.2f, 0.25f);  // Low rate for winter crops
                     break;
             }
         }
@@ -70,10 +70,10 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
                 case 8:  // Onion
                 case 9:  // Turnip
                 case 10: // Grapes
-                    BaseRate = FMath::RandRange(0.7f, 0.9f);  // High rate for winter crops
+                    BaseRate = FMath::RandRange(0.7f, 0.75f);  // High rate for winter crops
                     break;
                 default:
-                    BaseRate = FMath::RandRange(0.2f, 0.4f);  // Low rate for summer crops
+                    BaseRate = FMath::RandRange(0.2f, 0.25f);  // Low rate for summer crops
                     break;
             }
         }
@@ -100,10 +100,10 @@ float ASeasonManager::GetMarketPrice(int CropIndex) const
                 case 4:  // Pepper plant
                 case 5:  // Cucumber
                 case 6:  // Watermelon
-                    CurrentPrice = FMath::RandRange(20, 50);  // less price for summer crops
+                    CurrentPrice = FMath::RandRange(25, 30);  // less price for summer crops
                     break;
                 default:
-                    CurrentPrice = FMath::RandRange(60, 90);  // high price for winter crops
+                    CurrentPrice = FMath::RandRange(55, 60);  // high price for winter crops
                     break;
             }
         }
@@ -117,10 +117,10 @@ float ASeasonManager::GetMarketPrice(int CropIndex) const
                 case 8:  // Onion
                 case 9:  // Turnip
                 case 10: // Grapes
-                    CurrentPrice = FMath::RandRange(20, 50);  // less price for winter crops
+                    CurrentPrice = FMath::RandRange(25, 30);  // less price for winter crops
                     break;
                 default:
-                    CurrentPrice = FMath::RandRange(60, 90);  // high price for summer crops
+                    CurrentPrice = FMath::RandRange(55, 60);  // high price for summer crops
                     break;
             }
         }

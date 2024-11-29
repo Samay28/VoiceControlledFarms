@@ -25,22 +25,18 @@ float AUtilityManager::GetBoostSuccessRate(int UtilityIndex) const
     if (UtilityIndex == 0 || UtilityIndex == 3 || UtilityIndex == 6 || UtilityIndex == 9)
     {
         boostRate = 0.05f;
-        cost = 50;
     }
     else if (UtilityIndex == 1 || UtilityIndex == 4 || UtilityIndex == 7 || UtilityIndex == 10)
     {
         boostRate = 0.03f;
-        cost = 30;
     }
     else if (UtilityIndex == 2 || UtilityIndex == 5 || UtilityIndex == 8 || UtilityIndex == 11)
     {
         boostRate = 0.01f;
-        cost = 15;
     }
     else
     {
         boostRate = 0.0f;
-        cost = 0;
     }
     return boostRate;
 }
@@ -62,7 +58,6 @@ float AUtilityManager::GetMoneyDeducted(int UtilityIndex) const
     }
     else
     {
-
         cost = 0;
     }
     return cost;
