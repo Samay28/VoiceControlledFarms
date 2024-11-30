@@ -5,13 +5,13 @@ ASeasonManager::ASeasonManager()
 {
     PrimaryActorTick.bCanEverTick = false;
 
-    RandomizeSeason();
-    InitializeSuccessRates();  // Make sure this populates correctly
 }
 
 void ASeasonManager::BeginPlay()
 {
     Super::BeginPlay();
+    RandomizeSeason();
+    InitializeSuccessRates();  // Make sure this populates correctly
 
     // Log the current season for debugging
     UE_LOG(LogTemp, Warning, TEXT("Current Season: %s"), *UEnum::GetValueAsString(CurrentSeason));
@@ -56,7 +56,7 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
                     BaseRate = FMath::RandRange(0.7f, 0.75f);  // High rate for summer crops
                     break;
                 default:
-                    BaseRate = FMath::RandRange(0.2f, 0.25f);  // Low rate for winter crops
+                    BaseRate = FMath::RandRange(0.35f, 0.40f);  // Low rate for winter crops
                     break;
             }
         }
@@ -73,7 +73,7 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
                     BaseRate = FMath::RandRange(0.7f, 0.75f);  // High rate for winter crops
                     break;
                 default:
-                    BaseRate = FMath::RandRange(0.2f, 0.25f);  // Low rate for summer crops
+                    BaseRate = FMath::RandRange(0.35f, 0.4f);  // Low rate for summer crops
                     break;
             }
         }
