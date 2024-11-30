@@ -27,9 +27,9 @@ public:
 	float GetCropSuccessRate(int CropIndex) const;
 	float GetMarketPrice(int CropIndex) const;
 
+	void InitializeSuccessRates();
 protected:
 	
-	void InitializeSuccessRates();
 
 private:
 

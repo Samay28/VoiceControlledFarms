@@ -2,6 +2,7 @@
 #include "FarmLand3.h"
 #include "EconomyManager.h"
 #include "MarketManager.h"
+#include "SeasonManager.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -38,7 +39,7 @@ void AFarmLand3::Tick(float DeltaTime)
 void AFarmLand3::InputCropType(int index, float SuccessRate)
 {
 	if (CropMeshes.IsValidIndex(index))
-	{	
+	{
 		CurrentCropIndex = index;
 		CropTypeMesh->SetVisibility(true);
 		CropTypeMesh->SetStaticMesh(CropMeshes[index]);
@@ -88,6 +89,8 @@ void AFarmLand3::UpdateCountdown()
 		CurrentSuccessRate = 0;
 		CurrentCropIndex = 111;
 		QualityCompromisePerc = 100;
+		SeasonManager->InitializeSuccessRates();
+		MarketManager->setMarketRates();
 	}
 }
 

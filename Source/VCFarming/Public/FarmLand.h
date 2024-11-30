@@ -56,6 +56,7 @@ protected:
 
 	class AEconomyManager* Economy;
 	class AMarketManager* MarketManager;
+	class ASeasonManager* SeasonManager;
 private:
 
 	FTimerHandle CountdownTimerHandle;

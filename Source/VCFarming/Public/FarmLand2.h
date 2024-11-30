@@ -55,6 +55,7 @@ public:
 
 	class AEconomyManager* Economy;
 	class AMarketManager* MarketManager;
+	class ASeasonManager* SeasonManager;
 
 	UPROPERTY(BlueprintReadWrite)
 	float QualityCompromisePerc;
