@@ -76,11 +76,13 @@ void AFarmLand::UpdateCountdown()
 			if (bQualityCompromised)
 			{
 				MarketManager->SellHarvestAtHalf(CurrentCropIndex);
+				Economy->CropsRuined++;
 				UE_LOG(LogTemp, Warning, TEXT("sold in half"));
 			}
 			else
 			{
 				MarketManager->SellHarvest(CurrentCropIndex); // GET MARKET PRICE
+				Economy->CropsHarvested++;
 			}
 		}
 		else

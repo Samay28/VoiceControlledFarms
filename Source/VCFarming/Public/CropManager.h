@@ -41,6 +41,7 @@ protected:
 
 	// Reference to the SeasonManager
 	class ASeasonManager* SeasonManager;
+	class AEconomyManager* Economy;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int SelectedCropIndex;

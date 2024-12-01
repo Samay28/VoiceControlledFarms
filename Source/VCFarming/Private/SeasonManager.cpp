@@ -145,6 +145,7 @@ void ASeasonManager::InitializeSuccessRates()
 
 float ASeasonManager::GetCropSuccessRate(int CropIndex) const
 {
+    
     const float *FoundRate = CropSuccessRates.Find(CropIndex);
     if (FoundRate)
     {

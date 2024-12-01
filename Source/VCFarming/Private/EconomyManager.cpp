@@ -14,6 +14,11 @@ void AEconomyManager::BeginPlay()
 	Super::BeginPlay();
 	SetMoney(1000);
 	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
+	CropsRuined = 0;
+	CropsHarvested = 0;
+	TotalExpenditure = 0;
+	TotalCropsSowed = 0;
+
 }
 
 // Called every frame
@@ -26,7 +31,8 @@ void AEconomyManager::Tick(float DeltaTime)
 void AEconomyManager::DeductBalance(int amnt)
 {
 	Money -=amnt;
-	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
+	TotalExpenditure += amnt;
+	UE_LOG(LogTemp, Warning, TEXT("total exp : %d"), TotalExpenditure);
 }
 
 void AEconomyManager::AddBalance(int amnt)

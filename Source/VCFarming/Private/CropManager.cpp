@@ -1,5 +1,6 @@
 #include "CropManager.h"
 #include "Kismet/GameplayStatics.h"
+#include "EconomyManager.h"
 #include "SeasonManager.h"
 #include "UtilityManager.h"
 #include "FarmLand.h"
@@ -31,6 +32,7 @@ void ACropManager::BeginPlay()
 
 	// Find the SeasonManager
 	SeasonManager = Cast<ASeasonManager>(UGameplayStatics::GetActorOfClass(GetWorld(), ASeasonManager::StaticClass()));
+	Economy = Cast<AEconomyManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AEconomyManager::StaticClass()));
 	if (!SeasonManager)
 	{
 		UE_LOG(LogTemp, Error, TEXT("SeasonManager not found!"));
@@ -45,7 +47,8 @@ void ACropManager::selectCropsF1(float SuccessRate)
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
-			UE_LOG(LogTemp, Warning, TEXT("SuccessRate : %f"), SuccessRate);
+	
+			Economy->TotalCropsSowed++;
 		}
 		else
 		{
@@ -62,6 +65,7 @@ void ACropManager::selectCropsF2(float SuccessRate)
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
+			Economy->TotalCropsSowed++;
 		}
 		else
 		{
@@ -78,6 +82,7 @@ void ACropManager::selectCropsF3(float SuccessRate)
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
+			Economy->TotalCropsSowed++;
 		}
 		else
 		{
@@ -94,6 +99,7 @@ void ACropManager::selectCropsF4(float SuccessRate)
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
+			Economy->TotalCropsSowed++;
 		}
 		else
 		{
@@ -110,6 +116,7 @@ void ACropManager::selectCropsF5(float SuccessRate)
 		if (FarmInstance)
 		{
 			FarmInstance->InputCropType(SelectedCropIndex, SuccessRate);
+			Economy->TotalCropsSowed++;
 		}
 		else
 		{
