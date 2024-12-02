@@ -75,7 +75,6 @@ void AFarmLand2::UpdateCountdown()
 			if (bQualityCompromised)
 			{
 				MarketManager->SellHarvestAtHalf(CurrentCropIndex);
-				Economy->CropsRuined++;
 				UE_LOG(LogTemp, Warning, TEXT("sold in half"));
 			}
 			else
@@ -83,6 +82,11 @@ void AFarmLand2::UpdateCountdown()
 				MarketManager->SellHarvest(CurrentCropIndex); // GET MARKET PRICE
 				Economy->CropsHarvested++;
 			}
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Harvest Failed!"));
+			Economy->CropsRuined++;
 		}
 		CropTypeMesh->SetVisibility(false);
 		EquipmentAccessed = false;

@@ -51,7 +51,7 @@ bool AMarketManager::PurchaseCrops()
 	}
 	else
 	{
-		EconomyManager->DeductBalance(15 * 24); // deduction crop cost
+		EconomyManager->DeductBalance(15 * 16); // deduction crop cost
 		UE_LOG(LogTemp, Warning, TEXT("Balance Deducted!"));
 		return true;
 	}
