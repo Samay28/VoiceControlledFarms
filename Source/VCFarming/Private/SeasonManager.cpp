@@ -131,8 +131,6 @@ float ASeasonManager::GetMarketPrice(int CropIndex) const
 
 void ASeasonManager::InitializeSuccessRates()
 {
-
-
     for (int CropIndex = 0; CropIndex <= 10; CropIndex++) // Ensure you cover all crop indices (0-10)
     {
         // Use GetBaseSuccessRate instead of GetCropSuccessRate during initialization

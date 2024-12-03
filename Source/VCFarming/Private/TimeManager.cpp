@@ -5,7 +5,7 @@
 ATimeManager::ATimeManager()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	SessionTimerLeft = 1200;
+	SessionTimerLeft = 120;
 }
 
 // Called when the game starts or when spawned
