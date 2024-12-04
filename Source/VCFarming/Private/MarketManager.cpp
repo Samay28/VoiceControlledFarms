@@ -2,6 +2,7 @@
 #include "SeasonManager.h"
 #include "EconomyManager.h"
 #include "Kismet/GameplayStatics.h"
+#include "Components/Button.h"  
 
 // Sets default values
 AMarketManager::AMarketManager()
@@ -69,4 +70,20 @@ void AMarketManager::SellHarvestAtHalf(int CropIndex)
 
 	float HP = *HarvestPrice / 2;
 	EconomyManager->AddBalance(HP);
+}
+
+void AMarketManager::HandleUIClick()
+{
+	FHitResult HitResult;
+    APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+    if (PlayerController && PlayerController->GetHitResultUnderCursor(ECC_Visibility, false, HitResult))
+    {	
+		UE_LOG(LogTemp, Warning, TEXT("1 cLICKED"));
+        UButton* HoveredButton = Cast<UButton>(HitResult.GetComponent());
+        if (HoveredButton)
+        {
+            HoveredButton->OnClicked.Broadcast();
+			UE_LOG(LogTemp, Warning, TEXT("cLICKED"));
+        }
+    }
 }
