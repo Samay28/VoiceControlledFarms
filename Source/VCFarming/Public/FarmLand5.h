@@ -18,13 +18,14 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* FarmMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* CropTypeMesh;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
     int32 RemainingTime;
 
 public:	
@@ -64,4 +65,4 @@ private:
 	FTimerHandle CountdownTimerHandle;
 
 	void UpdateCountdown();
-};
+}; 

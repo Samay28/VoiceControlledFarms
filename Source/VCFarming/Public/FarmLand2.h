@@ -28,7 +28,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	int CurrentCropIndex;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
     int32 RemainingTime;
 public:	
 

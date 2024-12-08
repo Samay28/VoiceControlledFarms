@@ -37,7 +37,7 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	float QualityCompromisePerc;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
     int32 RemainingTime;
 protected:
 

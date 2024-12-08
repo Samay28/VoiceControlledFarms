@@ -24,7 +24,7 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	int CurrentCropIndex;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
     int32 RemainingTime;
 protected:
 	// Called when the game starts or when spawned

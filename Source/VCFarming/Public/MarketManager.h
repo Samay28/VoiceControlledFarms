@@ -29,8 +29,6 @@ public:
 
 	void SellHarvestAtHalf(int CropIndex);
 
-	UFUNCTION(BlueprintCallable)
-	void HandleUIClick();
 
 protected:
 	// Called when the game starts or when spawned

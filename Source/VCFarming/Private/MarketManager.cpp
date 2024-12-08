@@ -72,18 +72,4 @@ void AMarketManager::SellHarvestAtHalf(int CropIndex)
 	EconomyManager->AddBalance(HP);
 }
 
-void AMarketManager::HandleUIClick()
-{
-	FHitResult HitResult;
-    APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
-    if (PlayerController && PlayerController->GetHitResultUnderCursor(ECC_Visibility, false, HitResult))
-    {	
-		UE_LOG(LogTemp, Warning, TEXT("1 cLICKED"));
-        UButton* HoveredButton = Cast<UButton>(HitResult.GetComponent());
-        if (HoveredButton)
-        {
-            HoveredButton->OnClicked.Broadcast();
-			UE_LOG(LogTemp, Warning, TEXT("cLICKED"));
-        }
-    }
-}
+

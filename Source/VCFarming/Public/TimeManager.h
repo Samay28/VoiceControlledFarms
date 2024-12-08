@@ -16,7 +16,7 @@ public:
 	ATimeManager();
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
 	int SessionTimerLeft;
 
 protected:

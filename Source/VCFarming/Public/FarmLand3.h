@@ -26,7 +26,7 @@ protected:
 	UStaticMeshComponent* CropTypeMesh;
 
 	
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
     int32 RemainingTime;
 public:	
 	// Called every frame
