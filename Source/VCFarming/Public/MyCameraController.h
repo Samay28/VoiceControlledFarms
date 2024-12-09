@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -9,39 +7,44 @@
 UCLASS()
 class VCFARMING_API AMyCameraController : public APawn
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
-	AMyCameraController();
+    AMyCameraController();
 
-	virtual void Tick(float DeltaTime) override;
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	UPROPERTY(EditAnywhere)
-	class USpringArmComponent* SpringArm;
-	UPROPERTY(EditAnywhere)
-	class UCameraComponent* Camera;
-
-	UPROPERTY(EditAnywhere)
-	float MovementSpeed = 1000.f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-    float MinX = -5000.f;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-    float MaxX = 5000.f;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-    float MinY = -5000.f;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-    float MaxY = 5000.f;
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	void GetMouseMovement(FVector2D& OutMouseMovement);
+    virtual void BeginPlay() override;
+
+public:
+    virtual void Tick(float DeltaTime) override;
+
+   void GetMouseMovement(FVector2D& OutMouseMovement);
+
+   virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent);
 
 private:
+    // Camera and SpringArm components
+    UPROPERTY(VisibleAnywhere)
+    class USpringArmComponent* SpringArm;
 
+    UPROPERTY(VisibleAnywhere)
+    class UCameraComponent* Camera;
+
+    FVector2D PreviousCursorPosition;
+
+    // Movement properties
+    UPROPERTY(EditAnywhere)
+    float MovementSpeed = 1000.0f;
+
+    UPROPERTY(EditAnywhere)
+    float MinX = -5000.0f;
+
+    UPROPERTY(EditAnywhere)
+    float MaxX = 5000.0f;
+
+    UPROPERTY(EditAnywhere)
+    float MinY = -5000.0f;
+
+    UPROPERTY(EditAnywhere)
+    float MaxY = 5000.0f;
 };

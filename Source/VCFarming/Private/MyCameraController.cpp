@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MyCameraController.h"
 #include "Engine/World.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -66,4 +63,3 @@ void AMyCameraController::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
-
