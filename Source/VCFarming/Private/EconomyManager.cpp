@@ -12,7 +12,7 @@ AEconomyManager::AEconomyManager()
 void AEconomyManager::BeginPlay()
 {
 	Super::BeginPlay();
-	SetMoney(900);
+	SetMoney(1200);
 	UE_LOG(LogTemp, Warning, TEXT("Money : %d"), GetMoney());
 	CropsRuined = 0;
 	CropsHarvested = 0;

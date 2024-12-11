@@ -21,7 +21,7 @@ void AUtilityManager::BeginPlay()
 float AUtilityManager::GetBoostSuccessRate(int UtilityIndex) const
 {
     float boostRate = 0.0f;
-    float cost = 0.0f;
+
     if (UtilityIndex == 0 || UtilityIndex == 3 || UtilityIndex == 6 || UtilityIndex == 9)
     {
         boostRate = 0.05f;
