@@ -27,6 +27,7 @@ public:
 	float GetCropSuccessRate(int CropIndex) const;
 	float GetMarketPrice(int CropIndex) const;
 
+	UFUNCTION(BlueprintCallable)
 	void InitializeSuccessRates();
 protected:
 	
@@ -39,4 +40,6 @@ private:
 	
 	void RandomizeSeason();
 	float GetBaseSuccessRate(int CropIndex) const;
+
+	class ACityManager* CM;
 };

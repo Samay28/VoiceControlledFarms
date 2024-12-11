@@ -7,13 +7,13 @@ ACityManager::ACityManager()
     // Set this actor to call Tick() every frame. You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
-    SelectedCityIndex = 2; // Default to invalid index
+    SelectedCityIndex = 0; // Default to the first city index (0)
 
     // Initialize arrays for boost rates and costs
     CropBoostRatesByCity.SetNum(NumCities); // NumCities is the total number of cities
     CropCostsByCity.SetNum(NumCities);
 
-	InitializeBoostRates();
+    InitializeBoostRates();
     InitializeCost();
 }
 
@@ -28,7 +28,7 @@ float ACityManager::GetAlterSuccessRate(int CropIndex) const
 
     if (CropIndex < 0 || CropIndex >= CropBoostRatesByCity[SelectedCityIndex].Num())
     {
-        UE_LOG(LogTemp, Warning, TEXT("Invalid crop index!"));
+        UE_LOG(LogTemp, Warning, TEXT("Invalid crop index for success rates!"));
         return 0.0f;
     }
 
@@ -46,7 +46,7 @@ float ACityManager::GetAlterCost(int CropIndex) const
 
     if (CropIndex < 0 || CropIndex >= CropCostsByCity[SelectedCityIndex].Num())
     {
-        UE_LOG(LogTemp, Warning, TEXT("Invalid crop index!"));
+        UE_LOG(LogTemp, Warning, TEXT("Invalid crop index for costs!"));
         return 0.0f;
     }
 
@@ -58,8 +58,7 @@ void ACityManager::BeginPlay()
 {
     Super::BeginPlay();
 
-    // Initialize boost rates and costs for all cities
-    
+    // Additional initialization if required
 }
 
 void ACityManager::InitializeBoostRates()
@@ -67,27 +66,28 @@ void ACityManager::InitializeBoostRates()
     for (int CityIndex = 0; CityIndex < NumCities; ++CityIndex)
     {
         TArray<float> CropBoostRates;
+        CropBoostRates.SetNum(NumCrops); // Ensure array is sized for all crops
 
         for (int CropIndex = 0; CropIndex < NumCrops; ++CropIndex)
         {
             // Favorable city-crop mapping based on provided data
-            if ((CropIndex == 0 && (CityIndex == 1 || CityIndex == 2 || CityIndex == 3)) ||
-                (CropIndex == 1 && (CityIndex == 3 || CityIndex == 2 || CityIndex == 4)) ||
-                (CropIndex == 2 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 3 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 4 && (CityIndex == 5 || CityIndex == 2)) ||
-                (CropIndex == 5 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 6 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 7 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 8 && (CityIndex == 1 || CityIndex == 3)) ||
-                (CropIndex == 9 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 10 && (CityIndex == 2 || CityIndex == 3 || CityIndex == 1)))
+            if ((CropIndex == 0 && (CityIndex == 0 || CityIndex == 1 || CityIndex == 2)) ||
+                (CropIndex == 1 && (CityIndex == 2 || CityIndex == 1 || CityIndex == 3)) ||
+                (CropIndex == 2 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 3 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 4 && (CityIndex == 4 || CityIndex == 1)) ||
+                (CropIndex == 5 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 6 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 7 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 8 && (CityIndex == 0 || CityIndex == 2)) ||
+                (CropIndex == 9 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 10 && (CityIndex == 1 || CityIndex == 2 || CityIndex == 0)))
             {
-                CropBoostRates.Add(10.0f); // Boost success rate by 10%
+                CropBoostRates[CropIndex] = 5.0f; // Boost success rate by 5%
             }
             else
             {
-                CropBoostRates.Add(-5.0f); // Penalize success rate by 5%
+                 // Penalize success rate by 5%
             }
         }
 
@@ -100,27 +100,28 @@ void ACityManager::InitializeCost()
     for (int CityIndex = 0; CityIndex < NumCities; ++CityIndex)
     {
         TArray<float> CropCosts;
+        CropCosts.SetNum(NumCrops); // Ensure array is sized for all crops
 
         for (int CropIndex = 0; CropIndex < NumCrops; ++CropIndex)
         {
             // Favorable city-crop mapping based on provided data
-            if ((CropIndex == 0 && (CityIndex == 1 || CityIndex == 2 || CityIndex == 3)) ||
-                (CropIndex == 1 && (CityIndex == 3 || CityIndex == 2 || CityIndex == 4)) ||
-                (CropIndex == 2 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 3 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 4 && (CityIndex == 5 || CityIndex == 2)) ||
-                (CropIndex == 5 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 6 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 7 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 8 && (CityIndex == 1 || CityIndex == 3)) ||
-                (CropIndex == 9 && (CityIndex == 1 || CityIndex == 2)) ||
-                (CropIndex == 10 && (CityIndex == 2 || CityIndex == 3 || CityIndex == 1)))
+            if ((CropIndex == 0 && (CityIndex == 0 || CityIndex == 1 || CityIndex == 2)) ||
+                (CropIndex == 1 && (CityIndex == 2 || CityIndex == 1 || CityIndex == 3)) ||
+                (CropIndex == 2 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 3 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 4 && (CityIndex == 4 || CityIndex == 1)) ||
+                (CropIndex == 5 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 6 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 7 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 8 && (CityIndex == 0 || CityIndex == 2)) ||
+                (CropIndex == 9 && (CityIndex == 0 || CityIndex == 1)) ||
+                (CropIndex == 10 && (CityIndex == 1 || CityIndex == 2 || CityIndex == 0)))
             {
-                CropCosts.Add(-8.0f); // Lower cost for favorable crops
+                CropCosts[CropIndex] = 0.0f; // Lower cost for favorable crops
             }
             else
             {
-                CropCosts.Add(12.0f); // Higher cost for other crops
+                CropCosts[CropIndex] = 25.0f; // Higher cost for other crops
             }
         }
 

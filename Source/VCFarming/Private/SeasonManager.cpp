@@ -1,4 +1,6 @@
 #include "SeasonManager.h"
+#include "CityManager.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
 ASeasonManager::ASeasonManager()
@@ -9,8 +11,10 @@ ASeasonManager::ASeasonManager()
 void ASeasonManager::BeginPlay()
 {
     Super::BeginPlay();
+
+    CM = Cast<ACityManager>(UGameplayStatics::GetActorOfClass(GetWorld(), ACityManager::StaticClass()));
     RandomizeSeason();
-    InitializeSuccessRates(); // Make sure this populates correctly
+    // InitializeSuccessRates(); // Make sure this populates correctly
 
     // Log the current season for debugging
     UE_LOG(LogTemp, Warning, TEXT("Current Season: %s"), *UEnum::GetValueAsString(CurrentSeason));
@@ -143,13 +147,17 @@ void ASeasonManager::InitializeSuccessRates()
 
 float ASeasonManager::GetCropSuccessRate(int CropIndex) const
 {
-    
-    const float *FoundRate = CropSuccessRates.Find(CropIndex);
+
+    const float* FoundRate = CropSuccessRates.Find(CropIndex);
+
     if (FoundRate)
     {
-        return *FoundRate; // Dereference pointer if found
+        // Add the altered rate from the CityManager
+        float AlteredRate = CM ? CM->GetAlterSuccessRate(CropIndex) : 0.0f;
+        return *FoundRate + AlteredRate;
     }
 
     UE_LOG(LogTemp, Warning, TEXT("CropIndex %d not found in CropSuccessRates!"), CropIndex);
     return 0.0f;
 }
+

@@ -16,6 +16,7 @@ public:
 	AMarketManager();
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable)
 	void setMarketRates();
 
 	UFUNCTION(BlueprintCallable)
@@ -39,5 +40,7 @@ protected:
 
 	UPROPERTY(EditAnywhere)
     TMap<int, float> CropMarketPrice;
+
+	class ACityManager* CM;
 
 };

@@ -1,6 +1,7 @@
 #include "MarketManager.h"
 #include "SeasonManager.h"
 #include "EconomyManager.h"
+#include "CityManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/Button.h"  
 
@@ -17,7 +18,8 @@ void AMarketManager::BeginPlay()
 	Super::BeginPlay();
 	SeasonManager = Cast<ASeasonManager>(UGameplayStatics::GetActorOfClass(GetWorld(), ASeasonManager::StaticClass()));
 	EconomyManager = Cast<AEconomyManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AEconomyManager::StaticClass()));
-	setMarketRates();
+	CM = Cast<ACityManager>(UGameplayStatics::GetActorOfClass(GetWorld(), ACityManager::StaticClass()));
+	// setMarketRates();
 }
 
 // Called every frame
@@ -36,17 +38,22 @@ void AMarketManager::setMarketRates()
 }
 float AMarketManager::GetMarketPrices(int CropIndex) const
 {
-	const float *FoundPrice = CropMarketPrice.Find(CropIndex);
-	if (FoundPrice)
-	{
-		return *FoundPrice;
-	}
-	return 0.0f;
+    const float* FoundPrice = CropMarketPrice.Find(CropIndex);
+
+    if (FoundPrice)
+    {
+        // Add the altered cost from the CityManager
+        float AlteredCost = CM ? CM->GetAlterCost(CropIndex) : 0.0f;
+        return *FoundPrice + AlteredCost;
+    }
+
+    UE_LOG(LogTemp, Warning, TEXT("not found price"));
+    return 0.0f;
 }
 
 bool AMarketManager::PurchaseCrops()
 {
-	if (EconomyManager->GetMoney() < 360)
+	if (EconomyManager->GetMoney() < 240)
 	{
 		return false;
 	}
