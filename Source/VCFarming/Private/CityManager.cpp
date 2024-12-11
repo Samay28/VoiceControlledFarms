@@ -12,6 +12,9 @@ ACityManager::ACityManager()
     // Initialize arrays for boost rates and costs
     CropBoostRatesByCity.SetNum(NumCities); // NumCities is the total number of cities
     CropCostsByCity.SetNum(NumCities);
+
+	InitializeBoostRates();
+    InitializeCost();
 }
 
 // Returns the altered success rate for a crop
@@ -56,8 +59,7 @@ void ACityManager::BeginPlay()
     Super::BeginPlay();
 
     // Initialize boost rates and costs for all cities
-    InitializeBoostRates();
-    InitializeCost();
+    
 }
 
 void ACityManager::InitializeBoostRates()
