@@ -46,15 +46,15 @@ float AUtilityManager::GetMoneyDeducted(int UtilityIndex) const
     float cost = 0.0f;
     if (UtilityIndex == 0 || UtilityIndex == 3 || UtilityIndex == 6 || UtilityIndex == 9)
     {
-        cost = 50;
+        cost = 100;
     }
     else if (UtilityIndex == 1 || UtilityIndex == 4 || UtilityIndex == 7 || UtilityIndex == 10)
     {
-        cost = 30;
+        cost = 50;
     }
     else if (UtilityIndex == 2 || UtilityIndex == 5 || UtilityIndex == 8 || UtilityIndex == 11)
     {
-        cost = 15;
+        cost = 20;
     }
     else
     {
