@@ -56,7 +56,7 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
         case 4:                                       // Pepper plant
         case 5:                                       // Cucumber
         case 6:                                       // Watermelon
-            BaseRate = FMath::RandRange(0.7f, 0.75f); // High rate for summer crops
+            BaseRate = FMath::RandRange(0.6f, 0.65f); // High rate for summer crops
             break;
         default:
             BaseRate = FMath::RandRange(0.35f, 0.40f); // Low rate for winter crops
@@ -73,7 +73,7 @@ float ASeasonManager::GetBaseSuccessRate(int CropIndex) const
         case 8:                                       // Onion
         case 9:                                       // Turnip
         case 10:                                      // Grapes
-            BaseRate = FMath::RandRange(0.7f, 0.75f); // High rate for winter crops
+            BaseRate = FMath::RandRange(0.6f, 0.65f); // High rate for winter crops
             break;
         default:
             BaseRate = FMath::RandRange(0.35f, 0.4f); // Low rate for summer crops

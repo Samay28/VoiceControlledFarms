@@ -80,6 +80,14 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\CityManager.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\CropManager.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
@@ -177,6 +185,14 @@
 	},
 	{
 		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Private\\UtilityManager.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\Source\\VCFarming\\Public\\CityManager.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
 			"@C:\\Users\\samay\\Documents\\Github\\VoiceControlledFarms\\.vscode\\compileCommands_Default\\VCFarming.1.rsp"

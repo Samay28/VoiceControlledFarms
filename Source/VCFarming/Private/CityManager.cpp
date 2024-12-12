@@ -121,7 +121,7 @@ void ACityManager::InitializeCost()
             }
             else
             {
-                CropCosts[CropIndex] = 25.0f; // Higher cost for other crops
+                CropCosts[CropIndex] = 10.0f; // Higher cost for other crops
             }
         }
 
