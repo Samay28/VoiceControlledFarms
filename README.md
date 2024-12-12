@@ -61,3 +61,10 @@ Traditional learning lacks **engagement, accessibility, and practical applicatio
 
 ### Choose Strategy, Low Poly - 3D Environment
 ![Choose Farm Strategy Screen](https://drive.google.com/uc?export=view&id=1nySeScHMhRg_d3gQ4pzV4h3mElgb25xc)
+
+
+### Instructions to Run
+- ** Clone the Repository
+- ** Make sure you have downloaded the Unreal Engine, version 5.4 
+- ** Open the cloned repository folder in your local machine
+- ** Run the .uproject file to start the game.
